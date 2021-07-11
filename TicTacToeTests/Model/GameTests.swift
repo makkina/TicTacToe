@@ -236,10 +236,10 @@ class GameTests: XCTestCase {
     // MARK: - Error Handling
         
     func test_throwIndexOutOfRangeError_givenInvalidIndex() {
-        let invalidIndex = -1
-        
-        XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: invalidIndex)) { error in
-            XCTAssertEqual(error as? GameError, GameError.indexOutOfRangeError)
+        // when
+        XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: -1)) {
+            // then
+            XCTAssertEqual($0 as? GameError, GameError.indexOutOfRangeError)
         }
     }
 }
