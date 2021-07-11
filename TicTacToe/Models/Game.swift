@@ -14,11 +14,14 @@ enum GameState {
 }
 
 struct Game {
-
-    // MARK: - Init Game
-    
-    private (set) var activePlayer: Player
+    /*
+     `selectedBoardValues` entries can have the following states:
+        0 => Unselected
+        1 => Selected by player X
+        2 => Selected by player O
+     */
     private (set) var selectedBoardValues: [Int]
+    private (set) var activePlayer: Player
     private (set) var gameState: GameState
     private (set) var winner: Player?
     private let winningCombinations: [[Int]] = [
@@ -29,7 +32,9 @@ struct Game {
         // Diagonal
         [0, 4, 8], [2, 4, 6]
     ]
-    
+
+    // MARK: - Init Game
+
     init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState, winner: Player? = nil) {
         self.selectedBoardValues = selectedBoardValues
         self.activePlayer = activePlayer
