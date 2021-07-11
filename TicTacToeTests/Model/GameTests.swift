@@ -245,14 +245,13 @@ class GameTests: XCTestCase {
         
     func test_givenIndexAlreadyPopulated_throwIndexAlreadyPopulatedError() {
         // given
-        let selectedBoardValues = [0, 0, 1, 0, 0, 0, 0, 0, 0]
+        let x = 0
         let index = 2
+        game = GameFactory.game(selectedBoardValues: [x, x, 1, x, x, x, x, x, x])
         
         // when
-        game = GameFactory.game(selectedBoardValues: selectedBoardValues)
-
-        // then
         XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: index)) { error in
+            // then
             XCTAssertEqual(error as? GameError, GameError.indexAlreadyPopulatedError)
         }
     }
