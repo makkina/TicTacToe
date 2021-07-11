@@ -6,8 +6,6 @@ import XCTest
 class BoardViewModelTests: XCTestCase {
     
     func test_canCreateBoardViewModel() {
-        
         let viewModel = BoardViewModel()
-        
     }
 }
