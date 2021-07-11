@@ -29,6 +29,10 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
     
+    func test_setsErrorLabelTextToEmptyString() {
+        XCTAssertEqual(viewModel.errorLabelText, "")
+    }
+    
     // MARK: - Playing Game
 
     func test_givenPlayerSelectsBetween0And8_viewModelCanSendSelectionToGame() {
