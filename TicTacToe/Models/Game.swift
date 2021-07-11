@@ -51,7 +51,7 @@ struct Game {
     // MARK: - Update Board
     
     mutating func updateSelectedBoardValueAt(index: Int) throws {
-        if let e = gameErrorFound(index: index) {
+        if let e = gameErrorFound(index) {
             throw e
         }
         selectedBoardValues[index] = activePlayer.rawValue
@@ -92,7 +92,7 @@ private extension Game {
         return gameState == .won || gameState == .draw
     }
     
-    func gameErrorFound(index: Int) -> GameError? {
+    func gameErrorFound(_ index: Int) -> GameError? {
         guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index) else {
             return GameError.indexOutOfRangeError
         }
