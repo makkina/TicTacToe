@@ -20,4 +20,8 @@ class BoardViewModelTests: XCTestCase {
     func test_setsRestartGameButtonIsHiddenToTrue() {
         XCTAssertTrue(viewModel.restartGameButtonIsHidden)
     }
+    
+    func test_setsGameLabelTextToPlayerXTurn() {
+        XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
+    }
 }
