@@ -80,8 +80,7 @@ class BoardViewModelTests: XCTestCase {
         
         XCTAssertTrue(gameMock.checkForDrawIsCalled)
     }
-    // @todo: checkForWinner
-    // @todo: checkForDraw
+
     // @todo: Reset game
 }
 
