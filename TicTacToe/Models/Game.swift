@@ -38,9 +38,14 @@ struct Game {
     }
     
     private func isWinningCombinationFound() -> Bool {
-        let horizontalCombinations: [[Int]] = [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+        let winningCombinations: [[Int]] = [
+            // Horizontal
+            [0, 1, 2], [3, 4, 5], [6, 7, 8],
+            // Vertical
+            [0, 3, 6]
+        ]
         
-        let combination = horizontalCombinations.first {
+        let combination = winningCombinations.first {
             $0.allSatisfy { selectedBoardValues[$0] == activePlayer.rawValue }
         }
         return combination?.isEmpty == false
