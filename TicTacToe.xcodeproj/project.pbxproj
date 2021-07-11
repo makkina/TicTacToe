@@ -12,6 +12,7 @@
 		E960EFCC3F35B60D23642770 /* Pods_TicTacToeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FC7367FC364CAA984A91B53 /* Pods_TicTacToeTests.framework */; };
 		F053C616269B924500B65F1A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C615269B924500B65F1A /* Player.swift */; };
 		F053C61A269BB2DA00B65F1A /* BoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C619269BB2DA00B65F1A /* BoardButton.swift */; };
+		F053C61C269BBC4E00B65F1A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C61B269BBC4E00B65F1A /* UIImage.swift */; };
 		F0E648EB269AB6E600C07B45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EA269AB6E600C07B45 /* AppDelegate.swift */; };
 		F0E648ED269AB6E600C07B45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */; };
 		F0E648EF269AB6E600C07B45 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EE269AB6E600C07B45 /* BoardViewController.swift */; };
@@ -57,6 +58,7 @@
 		8FDD0BBBB2B98F04B79073D9 /* Pods-TicTacToe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TicTacToe.release.xcconfig"; path = "Target Support Files/Pods-TicTacToe/Pods-TicTacToe.release.xcconfig"; sourceTree = "<group>"; };
 		F053C615269B924500B65F1A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F053C619269BB2DA00B65F1A /* BoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButton.swift; sourceTree = "<group>"; };
+		F053C61B269BBC4E00B65F1A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		F0E648E7269AB6E600C07B45 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E648EA269AB6E600C07B45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 		F0E64924269ABCA300C07B45 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				F053C61B269BBC4E00B65F1A /* UIImage.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -531,6 +534,7 @@
 				F0E648ED269AB6E600C07B45 /* SceneDelegate.swift in Sources */,
 				F0E64927269AFE5000C07B45 /* Game.swift in Sources */,
 				F053C616269B924500B65F1A /* Player.swift in Sources */,
+				F053C61C269BBC4E00B65F1A /* UIImage.swift in Sources */,
 				F0E6492E269B603500C07B45 /* BoardViewModel.swift in Sources */,
 				F0E64934269B6C5000C07B45 /* GameProtocol.swift in Sources */,
 			);
