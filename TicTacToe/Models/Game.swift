@@ -72,7 +72,7 @@ struct Game {
     }
     
     mutating func switchTurn() {
-        activePlayer = activePlayer == .X ? .O : .O
+        activePlayer = activePlayer == .X ? .O : .X
     }
 }
 
