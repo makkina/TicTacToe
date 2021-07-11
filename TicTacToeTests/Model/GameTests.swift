@@ -200,6 +200,20 @@ class GameTests: XCTestCase {
         XCTAssertEqual(GameState.draw, game.gameState)
     }
     
+    func test_cannotDraw_givenTheGameHasBeenWon() {
+        // given
+        game = GameFactory.game(
+            gameState: .won,
+            selectedBoardValues: [1, 1, 1, 2, 2, 1, 1, 1, 2]
+        )
+        
+        // when
+        game.checkForDraw()
+        
+        // then
+        XCTAssertNotEqual(GameState.draw, game.gameState)
+    }
+    
     // @TODO: update Board Values selected by user
     // @TODO: update Game State
 }
