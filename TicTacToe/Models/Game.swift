@@ -45,21 +45,24 @@ struct Game {
             gameState = .won
         }
     }
-    
-    private func isDrawFound() -> Bool {
-        return selectedBoardValues.filter({ $0 == 0 }).isEmpty && gameState != .won
-    }
-    
+
     mutating func checkForDraw() {
         if isDrawFound() {
             gameState = .draw
         }
     }
+}
+
+extension Game {
     
     private func isWinningCombinationFound() -> Bool {
         let combination = winningCombinations.first {
             $0.allSatisfy { selectedBoardValues[$0] == activePlayer.rawValue }
         }
         return combination?.isEmpty == false
+    }
+    
+    private func isDrawFound() -> Bool {
+        return selectedBoardValues.filter({ $0 == 0 }).isEmpty && gameState != .won
     }
 }
