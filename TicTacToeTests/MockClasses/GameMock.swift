@@ -13,6 +13,7 @@ class GameMock: GameProtocol {
     var nextPlayer = Player.O
     var error: GameError?
     var checkForWinnerIsCalled: Bool = false
+    var checkForDrawIsCalled: Bool = false
 
     func updateSelectedBoardValueAt(index: Int) throws {
         if error != nil { throw error! }
@@ -25,7 +26,7 @@ class GameMock: GameProtocol {
     }
     
     func checkForDraw() {
-        //
+        checkForDrawIsCalled = true
     }
     
     func switchTurn() {
