@@ -138,8 +138,10 @@ class BoardViewModelTests: XCTestCase {
         viewModel.playerSelectedBoardValueAt(square: boardButton)
 
         // symbol is 􀆄
-        let image = UIImage.withSymbolName("xmark")
-        XCTAssertEqual(image, boardButton.currentImage)
+        XCTAssertEqual(
+            UIImage.withSymbolName("xmark"),
+            boardButton.currentImage
+        )
     }
     
     // @todo: Reset game
