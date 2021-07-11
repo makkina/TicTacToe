@@ -5,15 +5,18 @@ import XCTest
 
 class BoardViewModelTests: XCTestCase {
     
+    private var viewModel: BoardViewModel!
+
+    override func setUp() {
+        viewModel = BoardViewModel()
+    }
+    
     func test_canCreateBoardViewModel() {
-        let viewModel = BoardViewModel()
     }
     
     // MARK: - Initialising BoardViewModel
     
-    func test_setsGameToNotNil() {
-        let viewModel = BoardViewModel()
-        
+    func test_setsGameToNotNil() {        
         XCTAssertNotNil(viewModel.game)
     }
 }
