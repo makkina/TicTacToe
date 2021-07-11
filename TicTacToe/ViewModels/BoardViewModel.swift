@@ -34,6 +34,8 @@ extension BoardViewModel {
             errorLabelText = "Invalid entry, game is over"
         } catch GameError.indexOutOfRangeError {
             errorLabelText = "Invalid entry, unrecognized value"
+        } catch GameError.indexAlreadyPopulatedError {
+            errorLabelText = "Invalid entry, please try again"
         } catch {
             errorLabelText = ""
         }

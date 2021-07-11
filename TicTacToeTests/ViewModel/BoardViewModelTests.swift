@@ -88,4 +88,15 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, unrecognized value")
     }
+    
+    func test_givenIndexAlreadyPopulatedErrorWasThrown_errorLabelTextDisplayInvalidEntry() {
+        // given
+        gameMock.error = .indexAlreadyPopulatedError
+    
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        
+        // then
+        XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, please try again")
+    }
 }
