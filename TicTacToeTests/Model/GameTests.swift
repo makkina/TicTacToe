@@ -29,8 +29,8 @@ class GameTests: XCTestCase {
     }
     
     func test_setsSelectedBoardValuesTo9Zeros() {
-         XCTAssertEqual([0, 0, 0, 0, 0, 0, 0, 0, 0], game.selectedBoardValues)
-     }
+        XCTAssertEqual([0, 0, 0, 0, 0, 0, 0, 0, 0], game.selectedBoardValues)
+    }
     
     // MARK: - Game Won: (Horizontal Combinations)
 
@@ -225,12 +225,12 @@ class GameTests: XCTestCase {
         try? game.updateSelectedBoardValueAt(index: 4)
         
         // then
-        let expectationState = [
+        let expectatedState = [
             0, 0, 0,
             0, x, 0,
             0, 0, 0
         ]
-        XCTAssertEqual(expectationState, game.selectedBoardValues)
+        XCTAssertEqual(expectatedState, game.selectedBoardValues)
     }
     
     // MARK: - Error Handling
