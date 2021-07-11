@@ -42,6 +42,12 @@ struct Game {
         self.winner = winner
     }
     
+    // MARK: - Update Board
+    
+    mutating func updateSelectedBoardValueAt(_ index: Int) {
+        selectedBoardValues[index] = activePlayer.rawValue
+    }
+    
     // MARK: - Game Won
     
     mutating func checkForWinner() {
