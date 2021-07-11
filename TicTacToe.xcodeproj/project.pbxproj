@@ -139,13 +139,17 @@
 		F0E648E9269AB6E600C07B45 /* TicTacToe */ = {
 			isa = PBXGroup;
 			children = (
-				F0E648EA269AB6E600C07B45 /* AppDelegate.swift */,
-				F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */,
-				F0E648EE269AB6E600C07B45 /* ViewController.swift */,
-				F0E648F0269AB6E600C07B45 /* Main.storyboard */,
-				F0E648F3269AB6E900C07B45 /* Assets.xcassets */,
-				F0E648F5269AB6E900C07B45 /* LaunchScreen.storyboard */,
-				F0E648F8269AB6E900C07B45 /* Info.plist */,
+				F0E64925269ABCA700C07B45 /* Enums */,
+				F0E64924269ABCA300C07B45 /* Extensions */,
+				F0E64923269ABC9F00C07B45 /* Models */,
+				F0E64922269ABC9900C07B45 /* Protocols */,
+				F0E64921269ABC9300C07B45 /* Resources */,
+				F0E64920269ABC8D00C07B45 /* Startup */,
+				F0E6491F269ABC8600C07B45 /* Storyboards */,
+				F0E6491E269ABC8000C07B45 /* Supporting Files */,
+				F0E6491C269ABC7000C07B45 /* ViewControllers */,
+				F0E6491D269ABC7700C07B45 /* ViewModels */,
+				F0E6491B269ABC6900C07B45 /* Views */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -166,6 +170,90 @@
 				F0E6490E269AB6E900C07B45 /* Info.plist */,
 			);
 			path = TicTacToeUITests;
+			sourceTree = "<group>";
+		};
+		F0E6491B269ABC6900C07B45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F0E6491C269ABC7000C07B45 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F0E648EE269AB6E600C07B45 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F0E6491D269ABC7700C07B45 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		F0E6491E269ABC8000C07B45 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F0E648F8269AB6E900C07B45 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F0E6491F269ABC8600C07B45 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F0E648F0269AB6E600C07B45 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F0E64920269ABC8D00C07B45 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				F0E648EA269AB6E600C07B45 /* AppDelegate.swift */,
+				F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */,
+				F0E648F5269AB6E900C07B45 /* LaunchScreen.storyboard */,
+			);
+			path = Startup;
+			sourceTree = "<group>";
+		};
+		F0E64921269ABC9300C07B45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0E648F3269AB6E900C07B45 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0E64922269ABC9900C07B45 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		F0E64923269ABC9F00C07B45 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0E64924269ABCA300C07B45 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F0E64925269ABCA700C07B45 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -569,7 +657,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TicTacToe/Info.plist;
+				INFOPLIST_FILE = "TicTacToe/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -589,7 +677,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TicTacToe/Info.plist;
+				INFOPLIST_FILE = "TicTacToe/Supporting files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
