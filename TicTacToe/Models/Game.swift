@@ -44,7 +44,7 @@ struct Game {
     
     // MARK: - Update Board
     
-    mutating func updateSelectedBoardValueAt(_ index: Int) {
+    mutating func updateSelectedBoardValueAt(index: Int) {
         selectedBoardValues[index] = activePlayer.rawValue
     }
     

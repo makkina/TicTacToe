@@ -220,10 +220,9 @@ class GameTests: XCTestCase {
         // given
         let x = randomPlayer.rawValue
         var game = GameFactory.game(activePlayer: randomPlayer)
-        let index = 4
         
         // when
-        game.updateSelectedBoardValueAt(index)
+        game.updateSelectedBoardValueAt(index: 4)
         
         // then
         let expectationState = [
