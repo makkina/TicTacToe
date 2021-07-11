@@ -48,11 +48,18 @@ class GameTests: XCTestCase {
         // given
         let activePlayer = Player.X
         let x = activePlayer.rawValue
-        let selectedValues = [x, x, x, 0, 0, 0, 0, 0, 0]
-        game = Game(activePlayer: .X, selectedBoardValues: selectedValues)
+        game = Game(
+            activePlayer: activePlayer,
+            selectedBoardValues: [
+                x, x, x,
+                0, 0, 0,
+                0, 0, 0
+            ])
+        
         // when
         game.checkForWinner()
+        
         // then
-        XCTAssertEqual(Player.X, game.winner)
+        XCTAssertEqual(activePlayer, game.winner)
     }
 }
