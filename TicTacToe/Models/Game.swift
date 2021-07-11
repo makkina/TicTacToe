@@ -42,13 +42,14 @@ struct Game {
     mutating func checkForWinner() {
         if isWinningCombinationFound() {
             winner = activePlayer
+            gameState = .won
         }
     }
     
     mutating func checkForDraw() {
         let unselectedSquares = selectedBoardValues.filter { $0 == 0 }
         
-        if unselectedSquares.isEmpty {
+        if unselectedSquares.isEmpty && gameState != .won {
             gameState = .draw
         }
     }
