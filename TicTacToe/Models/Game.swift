@@ -21,7 +21,13 @@ struct Game {
     private (set) var selectedBoardValues: [Int]
     private (set) var gameState: GameState
     private (set) var winner: Player?
-
+    private let winningCombinations: [[Int]] = [
+        // Horizontal
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        // Vertical
+        [0, 3, 6]
+    ]
+    
     init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState, winner: Player? = nil) {
         self.selectedBoardValues = selectedBoardValues
         self.activePlayer = activePlayer
@@ -38,13 +44,6 @@ struct Game {
     }
     
     private func isWinningCombinationFound() -> Bool {
-        let winningCombinations: [[Int]] = [
-            // Horizontal
-            [0, 1, 2], [3, 4, 5], [6, 7, 8],
-            // Vertical
-            [0, 3, 6]
-        ]
-        
         let combination = winningCombinations.first {
             $0.allSatisfy { selectedBoardValues[$0] == activePlayer.rawValue }
         }
