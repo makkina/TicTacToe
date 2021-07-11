@@ -21,4 +21,8 @@ class GameTests: XCTestCase {
     func test_setsGameStateIsPlaying() {
         XCTAssertEqual(GameState.playing, game.gameState)
     }
+    
+    func test_setsWinnerToNil() {
+        XCTAssertNil(game.winner)
+    }
 }

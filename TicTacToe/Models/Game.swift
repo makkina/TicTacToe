@@ -17,9 +17,11 @@ struct Game {
 
     private (set) var activePlayer: Player
     private (set) var gameState: GameState
+    private (set) var winner: Player?
 
     init() {
         self.activePlayer = .X
         self.gameState = .playing
+        self.winner = nil
     }
 }
