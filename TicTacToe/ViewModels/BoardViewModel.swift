@@ -7,6 +7,7 @@ final class BoardViewModel {
     private (set) var game: GameProtocol!
     private (set) var restartGameButtonIsHidden: Bool = true
     private (set) var gameLabelText: String = "Player X turn"
+    private (set) var errorLabelText: String = ""
 
     init(game: GameProtocol) {
         self.game = game
