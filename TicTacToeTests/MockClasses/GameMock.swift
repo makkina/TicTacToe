@@ -9,9 +9,10 @@ class GameMock: GameProtocol {
     var gameState = GameState.playing
     var selectedBoardValues = [Int](repeating: 0, count: 9)
     var winner: Player?
+    var updateSelectedBoardValueReceived: Int?
     
     func updateSelectedBoardValueAt(index: Int) throws {
-        //
+        updateSelectedBoardValueReceived = index
     }
     
     func checkForWinner() {
