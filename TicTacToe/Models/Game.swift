@@ -53,6 +53,8 @@ struct Game {
     }
 }
 
+// MARK: - Private Helper Methods
+
 extension Game {
     
     private func isWinningCombinationFound() -> Bool {
