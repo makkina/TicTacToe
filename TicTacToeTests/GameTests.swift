@@ -9,7 +9,10 @@ class GameTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        game = Game(activePlayer: .X)
+        game = Game(
+            activePlayer: .X,
+            selectedBoardValues: [Int](repeating: 0, count: 9)
+        )
     }
     
     // MARK: - Initialising game
@@ -31,19 +34,25 @@ class GameTests: XCTestCase {
      }
     
     // MARK: - Game Won
-    
-    func test_playerXCanWinGame() {
-        game.checkForWinner()
-        
-        XCTAssertEqual(Player.X, game.winner)
-    }
-    
+     
     func test_playerOCanWinGame() {
         // given
-        game = Game(activePlayer: .O)
+        game = Game(activePlayer: .O, selectedBoardValues: [2, 2, 2, 0, 0, 0, 0, 0, 0])
         // when
         game.checkForWinner()
         // then
         XCTAssertEqual(Player.O, game.winner)
+    }
+    
+    func test_playerXCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
+        // given
+        let activePlayer = Player.X
+        let x = activePlayer.rawValue
+        let selectedValues = [x, x, x, 0, 0, 0, 0, 0, 0]
+        game = Game(activePlayer: .X, selectedBoardValues: selectedValues)
+        // when
+        game.checkForWinner()
+        // then
+        XCTAssertEqual(Player.X, game.winner)
     }
 }
