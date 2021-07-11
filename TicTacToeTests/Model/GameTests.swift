@@ -258,12 +258,8 @@ class GameTests: XCTestCase {
     
     func test_givenGameIsOver_throwGameIsOverError() {
         // given
-        let x = 0
         let index = 3
-        game = GameFactory.game(
-            gameState: .won,
-            selectedBoardValues: [1, 1, 1, x, x, x, x, x, x]
-        )
+        game = GameFactory.game(gameState: .won)
 
         // when
         XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: index)) { error in
