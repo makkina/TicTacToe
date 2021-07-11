@@ -55,16 +55,16 @@ struct Game {
 
 // MARK: - Private Helper Methods
 
-extension Game {
+private extension Game {
     
-    private func isWinningCombinationFound() -> Bool {
+    func isWinningCombinationFound() -> Bool {
         let combination = winningCombinations.first {
             $0.allSatisfy { selectedBoardValues[$0] == activePlayer.rawValue }
         }
         return combination?.isEmpty == false
     }
     
-    private func isDrawFound() -> Bool {
+    func isDrawFound() -> Bool {
         return selectedBoardValues.filter({ $0 == 0 }).isEmpty && gameState != .won
     }
 }
