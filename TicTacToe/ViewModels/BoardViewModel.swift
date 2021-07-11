@@ -11,4 +11,10 @@ final class BoardViewModel {
     init(game: GameProtocol) {
         self.game = game
     }
+    
+    // MARK: - Playing Game
+    
+    func playerSelectedBoardValueAt(index: Int) {
+        try? game.updateSelectedBoardValueAt(index: 4)
+    }
 }

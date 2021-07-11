@@ -24,4 +24,19 @@ class BoardViewModelTests: XCTestCase {
     func test_setsGameLabelTextToPlayerXTurn() {
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
+    
+    // MARK: - Playing Game
+    
+    func test_givenPlayerSelects4_viewModelCanSendSelectionToGame() {
+        // given
+        let gameMock = GameFactory.gameMock()
+        let viewModel = BoardViewModel(game: gameMock)
+        let index = 4
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(index: index)
+        
+        // then
+        XCTAssertEqual(index, gameMock.updateSelectedBoardValueReceived)
+    }
 }
