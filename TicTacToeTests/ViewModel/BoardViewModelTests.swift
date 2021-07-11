@@ -39,4 +39,17 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(index, gameMock.updateSelectedBoardValueReceived)
     }
+    
+    func test_givenPlayerSelectsBetween0And8_viewModelCanSendSelectionToGame() {
+        // given
+        let gameMock = GameFactory.gameMock()
+        let viewModel = BoardViewModel(game: gameMock)
+        let index = Int.random(in: 0...8)
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(index: index)
+        
+        // then
+        XCTAssertEqual(index, gameMock.updateSelectedBoardValueReceived)
+    }
 }

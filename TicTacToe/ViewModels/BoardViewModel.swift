@@ -15,6 +15,6 @@ final class BoardViewModel {
     // MARK: - Playing Game
     
     func playerSelectedBoardValueAt(index: Int) {
-        try? game.updateSelectedBoardValueAt(index: 4)
+        try? game.updateSelectedBoardValueAt(index: index)
     }
 }
