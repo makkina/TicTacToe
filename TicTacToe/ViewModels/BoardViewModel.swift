@@ -15,18 +15,21 @@ final class BoardViewModel {
     
     // MARK: - Playing Game
     
-    func playerSelectedBoardValueAt(index: Int) {
+    private func tryUpdateSelectedBoardValue(_ index: Int) {
+        errorLabelText = ""
         do {
             try game.updateSelectedBoardValueAt(index: index)
         } catch GameError.gameIsOverError {
             errorLabelText = "Invalid entry, game is over"
-            
         } catch GameError.indexOutOfRangeError {
             errorLabelText = "Invalid entry, unrecognized value"
-            
         } catch {
             errorLabelText = ""
         }
+    }
+    
+    func playerSelectedBoardValueAt(index: Int) {
+        tryUpdateSelectedBoardValue(index)
         game.switchTurn()
         gameLabelText = game.activePlayer.name + " turn"
     }
