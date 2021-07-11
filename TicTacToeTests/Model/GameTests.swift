@@ -214,7 +214,7 @@ class GameTests: XCTestCase {
         XCTAssertNotEqual(GameState.draw, game.gameState)
     }
     
-    // MARK: - User Selection
+    // MARK: - Update Board
     
     func test_updateSelectedBoardValueWithPlayerSelection() {
         // given
