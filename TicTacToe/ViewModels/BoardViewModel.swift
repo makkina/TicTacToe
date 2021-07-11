@@ -15,7 +15,8 @@ final class BoardViewModel {
     
     // MARK: - Playing Game
     
-    func playerSelectedBoardValueAt(index: Int) {
+    func playerSelectedBoardValueAt(square: BoardButton) {
+        let index = square.tag-1
         tryUpdateSelectedBoardValue(index)
         game.checkForWinner()
         game.checkForDraw()
