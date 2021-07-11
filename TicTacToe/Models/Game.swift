@@ -46,7 +46,11 @@ struct Game {
     }
     
     mutating func checkForDraw() {
-        gameState = .draw
+        let unselectedSquares = selectedBoardValues.filter { $0 == 0 }
+        
+        if unselectedSquares.isEmpty {
+            gameState = .draw
+        }
     }
     
     private func isWinningCombinationFound() -> Bool {

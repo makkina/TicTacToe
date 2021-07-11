@@ -184,12 +184,22 @@ class GameTests: XCTestCase {
 
     // MARK: - Game Draw
     
-    func test_canDraw() {
+    func test_canDraw_givenAllBoardValuesAreSelected() {
+        // given
+        game = GameFactory.game(
+            selectedBoardValues: [
+                1, 1, 2,
+                2, 2, 1,
+                1, 1, 2
+            ])
+        
+        // when
         game.checkForDraw()
-
+        
+        // then
         XCTAssertEqual(GameState.draw, game.gameState)
     }
-    // @TODO: check for draw
+    
     // @TODO: update Board Values selected by user
     // @TODO: update Game State
 }
