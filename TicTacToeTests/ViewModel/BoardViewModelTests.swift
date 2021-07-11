@@ -5,10 +5,12 @@ import XCTest
 
 class BoardViewModelTests: XCTestCase {
     
+    private var gameMock: GameMock!
     private var viewModel: BoardViewModel!
 
     override func setUp() {
-        viewModel = BoardViewModel(game: GameFactory.gameMock())
+        gameMock = GameFactory.gameMock()
+        viewModel = BoardViewModel(game: gameMock)
     }
     
     // MARK: - Initialising BoardViewModel
@@ -29,8 +31,6 @@ class BoardViewModelTests: XCTestCase {
     
     func test_givenPlayerSelects4_viewModelCanSendSelectionToGame() {
         // given
-        let gameMock = GameFactory.gameMock()
-        let viewModel = BoardViewModel(game: gameMock)
         let index = 4
         
         // when
@@ -42,8 +42,6 @@ class BoardViewModelTests: XCTestCase {
     
     func test_givenPlayerSelectsBetween0And8_viewModelCanSendSelectionToGame() {
         // given
-        let gameMock = GameFactory.gameMock()
-        let viewModel = BoardViewModel(game: gameMock)
         let index = Int.random(in: 0...8)
         
         // when
