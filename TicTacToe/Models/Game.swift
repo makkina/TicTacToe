@@ -2,6 +2,12 @@
 
 import Foundation
 
+enum Player {
+    case X
+    case O
+}
+
 struct Game {
-    
+
+    private(set) var activePlayer: Player = .X
 }
