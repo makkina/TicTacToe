@@ -77,4 +77,15 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, game is over")
     }
+    
+    func test_givenIndexOutOfRangeErrorWasThrown_errorLabelTextDisplayInvalidEntry() {
+        // given
+        gameMock.error = .indexOutOfRangeError
+    
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        
+        // then
+        XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, unrecognized value")
+    }
 }

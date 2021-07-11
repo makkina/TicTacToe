@@ -14,9 +14,8 @@ class GameMock: GameProtocol {
     var error: GameError?
 
     func updateSelectedBoardValueAt(index: Int) throws {
-        if error != nil {
-            throw error!
-        }
+        if error != nil { throw error! }
+
         updateSelectedBoardValueReceived = index
     }
     
