@@ -15,6 +15,17 @@ final class BoardViewModel {
     
     // MARK: - Playing Game
     
+    func playerSelectedBoardValueAt(index: Int) {
+        tryUpdateSelectedBoardValue(index)
+        game.switchTurn()
+        gameLabelText = game.activePlayer.name + " turn"
+    }
+}
+
+// MARK: - Private Helper Methods
+
+extension BoardViewModel {
+    
     private func tryUpdateSelectedBoardValue(_ index: Int) {
         errorLabelText = ""
         do {
@@ -26,11 +37,5 @@ final class BoardViewModel {
         } catch {
             errorLabelText = ""
         }
-    }
-    
-    func playerSelectedBoardValueAt(index: Int) {
-        tryUpdateSelectedBoardValue(index)
-        game.switchTurn()
-        gameLabelText = game.activePlayer.name + " turn"
     }
 }
