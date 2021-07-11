@@ -143,4 +143,24 @@ class GameTests: XCTestCase {
         // then
         XCTAssertEqual(randomPlayer, game.winner)
     }
+    
+    // MARK: - Game Won: (Diagonal Combinations)
+    
+    func test_randomPlayerCanWin_givenTheFirstWinningDiagonalCombinationWasFound() {
+        // given
+        let x = randomPlayer.rawValue
+        game = GameFactory.game(
+            activePlayer: randomPlayer,
+            selectedBoardValues: [
+                x, 0, 0,
+                0, x, 0,
+                0, 0, x
+            ])
+        
+        // when
+        game.checkForWinner()
+        
+        // then
+        XCTAssertEqual(randomPlayer, game.winner)
+    }
 }
