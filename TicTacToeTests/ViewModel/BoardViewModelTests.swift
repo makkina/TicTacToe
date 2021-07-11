@@ -65,6 +65,8 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
 
+    // MARK: - Check of Game is Over
+    
     func test_checkForWinnerIsCalledAfterEveryPlayerSelection() {
         gameMock.checkForWinnerIsCalled = false
         
@@ -81,6 +83,20 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertTrue(gameMock.checkForDrawIsCalled)
     }
 
+    // MARK: - Game is Over
+    
+    func test_givenPlayerXWon_gameLabelTextReadsPlayerXWon() {
+        // given
+        gameMock.gameState = .won
+        gameMock.winner = Player.X
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        
+        // then
+        XCTAssertEqual(viewModel.gameLabelText, "Player X won")
+    }
+    
     // @todo: Reset game
 }
 
