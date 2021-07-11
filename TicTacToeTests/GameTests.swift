@@ -29,4 +29,12 @@ class GameTests: XCTestCase {
     func test_setsSelectedBoardValuesTo9Zeros() {
          XCTAssertEqual([0, 0, 0, 0, 0, 0, 0, 0, 0], game.selectedBoardValues)
      }
+    
+    // MARK: - Game Won
+    
+    func test_playerXCanWinGame() {
+        game.checkForWinner()
+        
+        XCTAssertEqual(PLayer.X, game.winner)
+    }
 }

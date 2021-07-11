@@ -15,6 +15,8 @@ enum GameState {
 
 struct Game {
 
+    // MARK: - Init Game
+    
     private (set) var activePlayer: Player
     private (set) var gameState: GameState
     private (set) var winner: Player?
@@ -25,5 +27,11 @@ struct Game {
         self.gameState = .playing
         self.winner = nil
         self.selectedBoardValues = [Int](repeating: 0, count: 9)
+    }
+    
+    // MARK: - Game Won
+    
+    mutating func checkForWinner() {
+        winner = .X
     }
 }
