@@ -8,7 +8,7 @@ class BoardViewModelTests: XCTestCase {
     private var viewModel: BoardViewModel!
 
     override func setUp() {
-        viewModel = BoardViewModel(game: GameFactory.game())
+        viewModel = BoardViewModel(game: GameFactory.gameMock())
     }
     
     // MARK: - Initialising BoardViewModel

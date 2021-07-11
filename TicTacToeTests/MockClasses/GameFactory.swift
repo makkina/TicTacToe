@@ -19,4 +19,8 @@ struct GameFactory {
             winner: winner ?? nil
         )
     }
+
+    static func gameMock() -> GameMock {
+        return GameMock()
+    }
 }
