@@ -49,5 +49,8 @@ extension BoardViewModel {
         if game.gameState == .won {
             gameLabelText = game.winner!.name + " won"
         }
+        if game.gameState == .draw {
+            gameLabelText = "It's a draw"
+        }
     }
 }
