@@ -50,6 +50,10 @@ struct Game {
     
     // MARK: - Update Board
     
+    private func gameIsOver() -> Bool {
+        return gameState != .won && gameState != .draw
+    }
+    
     mutating func updateSelectedBoardValueAt(index: Int) throws {
         guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index) else {
             throw GameError.indexOutOfRangeError
@@ -57,7 +61,7 @@ struct Game {
         guard selectedBoardValues[index] == 0 else {
             throw GameError.indexAlreadyPopulatedError
         }
-        guard gameState != .won && gameState != .draw else {
+        guard gameIsOver() else {
             throw GameError.gameIsOverError
         }
         selectedBoardValues[index] = activePlayer.rawValue
