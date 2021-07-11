@@ -16,5 +16,7 @@ final class BoardViewModel {
     
     func playerSelectedBoardValueAt(index: Int) {
         try? game.updateSelectedBoardValueAt(index: index)
+        game.switchTurn()
+        gameLabelText = "Player O turn"
     }
 }
