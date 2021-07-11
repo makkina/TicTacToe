@@ -34,20 +34,32 @@ class GameTests: XCTestCase {
      }
     
     // MARK: - Game Won
-     
-    func test_playerOCanWinGame() {
-        // given
-        game = Game(activePlayer: .O, selectedBoardValues: [2, 2, 2, 0, 0, 0, 0, 0, 0])
-        // when
-        game.checkForWinner()
-        // then
-        XCTAssertEqual(Player.O, game.winner)
-    }
     
     func test_playerXCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
         // given
         let activePlayer = Player.X
         let x = activePlayer.rawValue
+        
+        game = Game(
+            activePlayer: activePlayer,
+            selectedBoardValues: [
+                x, x, x,
+                0, 0, 0,
+                0, 0, 0
+            ])
+        
+        // when
+        game.checkForWinner()
+        
+        // then
+        XCTAssertEqual(activePlayer, game.winner)
+    }
+    
+    func test_playerOCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
+        // given
+        let activePlayer = Player.O
+        let x = activePlayer.rawValue
+
         game = Game(
             activePlayer: activePlayer,
             selectedBoardValues: [
