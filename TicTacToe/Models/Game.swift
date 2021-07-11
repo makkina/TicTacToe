@@ -15,6 +15,7 @@ enum GameState {
 
 enum GameError: Error {
     case indexOutOfRangeError
+    case indexAlreadyPopulatedError
 }
 
 struct Game {
@@ -49,8 +50,11 @@ struct Game {
     // MARK: - Update Board
     
     mutating func updateSelectedBoardValueAt(index: Int) throws {
-        guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index)  else {
+        guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index) else {
             throw GameError.indexOutOfRangeError
+        }
+        guard selectedBoardValues[index] == 0 else {
+            throw GameError.indexAlreadyPopulatedError
         }
         selectedBoardValues[index] = activePlayer.rawValue
     }

@@ -234,12 +234,26 @@ class GameTests: XCTestCase {
     }
     
     // MARK: - Error Handling
-        
-    func test_throwIndexOutOfRangeError_givenInvalidIndex() {
+    
+    func test_givenInvalidIndex_throwIndexOutOfRangeError() {
         // when
         XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: -1)) {
             // then
             XCTAssertEqual($0 as? GameError, GameError.indexOutOfRangeError)
+        }
+    }
+        
+    func test_givenIndexAlreadyPopulated_throwIndexAlreadyPopulatedError() {
+        // given
+        let selectedBoardValues = [0, 0, 1, 0, 0, 0, 0, 0, 0]
+        let index = 2
+        
+        // when
+        game = GameFactory.game(selectedBoardValues: selectedBoardValues)
+
+        // then
+        XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: index)) { error in
+            XCTAssertEqual(error as? GameError, GameError.indexAlreadyPopulatedError)
         }
     }
 }
