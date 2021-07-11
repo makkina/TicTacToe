@@ -232,4 +232,14 @@ class GameTests: XCTestCase {
         ]
         XCTAssertEqual(expectationState, game.selectedBoardValues)
     }
+    
+    // MARK: - Error Handling
+        
+    func test_throwIndexOutOfRangeError_givenInvalidIndex() {
+        let invalidIndex = -1
+        
+        XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: invalidIndex)) { error in
+            XCTAssertEqual(error as? GameError, GameError.indexOutOfRangeError)
+        }
+    }
 }
