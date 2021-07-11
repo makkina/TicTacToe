@@ -45,6 +45,10 @@ struct Game {
         }
     }
     
+    mutating func checkForDraw() {
+        gameState = .draw
+    }
+    
     private func isWinningCombinationFound() -> Bool {
         let combination = winningCombinations.first {
             $0.allSatisfy { selectedBoardValues[$0] == activePlayer.rawValue }
