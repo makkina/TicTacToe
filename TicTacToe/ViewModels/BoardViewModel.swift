@@ -5,6 +5,7 @@ import Foundation
 final class BoardViewModel {
     
     private (set) var game: GameProtocol!
+    private (set) var restartGameButtonIsHidden: Bool! = true
     
     init(game: GameProtocol) {
         self.game = game

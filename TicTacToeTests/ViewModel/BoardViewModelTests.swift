@@ -16,4 +16,8 @@ class BoardViewModelTests: XCTestCase {
     func test_setsGameToNotNil() {
         XCTAssertNotNil(viewModel.game)
     }
+    
+    func test_setsRestartGameButtonIsHiddenToTrue() {
+        XCTAssertTrue(viewModel.restartGameButtonIsHidden)
+    }
 }
