@@ -51,16 +51,23 @@ struct Game {
     // MARK: - Update Board
     
     mutating func updateSelectedBoardValueAt(index: Int) throws {
-        guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index) else {
-            throw GameError.indexOutOfRangeError
-        }
-        guard selectedBoardValues[index] == 0 else {
-            throw GameError.indexAlreadyPopulatedError
-        }
-        guard !isGameOver() else {
-            throw GameError.gameIsOverError
+        if let e = gameErrorFound(index: index) {
+            throw e
         }
         selectedBoardValues[index] = activePlayer.rawValue
+    }
+    
+    private func gameErrorFound(index: Int) -> GameError? {
+        guard [0, 1, 2, 3, 4, 5, 6, 7, 8].contains(index) else {
+            return GameError.indexOutOfRangeError
+        }
+        guard selectedBoardValues[index] == 0 else {
+            return GameError.indexAlreadyPopulatedError
+        }
+        guard !isGameOver() else {
+            return GameError.gameIsOverError
+        }
+        return nil
     }
     
     // MARK: - Game Won
