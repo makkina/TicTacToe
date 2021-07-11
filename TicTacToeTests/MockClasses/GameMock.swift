@@ -10,7 +10,8 @@ class GameMock: GameProtocol {
     var selectedBoardValues = [Int](repeating: 0, count: 9)
     var winner: Player?
     var updateSelectedBoardValueReceived: Int?
-    
+    var nextPlayer = Player.O
+
     func updateSelectedBoardValueAt(index: Int) throws {
         updateSelectedBoardValueReceived = index
     }
@@ -24,6 +25,6 @@ class GameMock: GameProtocol {
     }
     
     func switchTurn() {
-        //
+        activePlayer = nextPlayer
     }
 }
