@@ -32,6 +32,12 @@ struct Game {
     // MARK: - Game Won
     
     mutating func checkForWinner() {
+        if isWinningCombinationFound() {
+            winner = activePlayer
+        }
+    }
+    
+    private func isWinningCombinationFound() -> Bool {
         let horizontalCombinations: [[Int]] = [[0, 1, 2], [3, 4, 5]]
         var combinationFound = false
         
@@ -40,9 +46,6 @@ struct Game {
                 selectedBoardValues[$0] == activePlayer.rawValue
             }
         }
-        
-        if combinationFound {
-            winner = activePlayer
-        }
+        return combinationFound == true
     }
 }
