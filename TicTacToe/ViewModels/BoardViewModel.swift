@@ -18,6 +18,7 @@ final class BoardViewModel {
     func playerSelectedBoardValueAt(square: BoardButton) {
         let index = square.tag-1
         tryUpdateSelectedBoardValue(index)
+        square.occupancy = .isFilled
         game.checkForWinner()
         game.checkForDraw()
         game.switchTurn()

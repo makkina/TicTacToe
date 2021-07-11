@@ -121,6 +121,19 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.gameLabelText, "It's a draw")
     }
     
+    // MARK: - Board Button
+    
+    func test_boardButtonOccupancyGetsFilled_givenItWasSelectedByPlayer() {
+        // given
+        boardButton.occupancy = .isEmpty
+
+        // when
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+
+        // then
+        XCTAssertEqual(boardButton.occupancy, .isFilled)
+    }
+    
     // @todo: Reset game
     // @todo: restartGameButtonIsHidden
 }
