@@ -4,4 +4,9 @@ import Foundation
 
 final class BoardViewModel {
     
+    private (set) var game: Game! = Game(
+        activePlayer: .X,
+        selectedBoardValues: [Int](repeating: 0, count: 9),
+        gameState: .playing
+    )
 }
