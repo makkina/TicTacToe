@@ -51,7 +51,7 @@ struct Game {
     // MARK: - Update Board
     
     mutating func updateSelectedBoardValueAt(index: Int) throws {
-        if let e = gameErrorFound(index) { throw e }
+        if let e: GameError = gameErrorFound(index) { throw e }
         
         selectedBoardValues[index] = activePlayer.rawValue
     }
