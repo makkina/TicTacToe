@@ -6,6 +6,7 @@ import XCTest
 class GameTests: XCTestCase {
 
     private var game: Game!
+    private var randomPlayer: Player!
     
     override func setUp() {
         super.setUp()
@@ -13,6 +14,7 @@ class GameTests: XCTestCase {
             activePlayer: .X,
             selectedBoardValues: [Int](repeating: 0, count: 9)
         )
+        randomPlayer = [Player.X, Player.O].randomElement()!
     }
     
     // MARK: - Initialising game
@@ -35,13 +37,11 @@ class GameTests: XCTestCase {
     
     // MARK: - Game Won
     
-    func test_playerXCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
+    func test_randomPlayerCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
         // given
-        let activePlayer = Player.X
-        let x = activePlayer.rawValue
-        
+        let x = randomPlayer.rawValue
         game = Game(
-            activePlayer: activePlayer,
+            activePlayer: randomPlayer,
             selectedBoardValues: [
                 x, x, x,
                 0, 0, 0,
@@ -52,26 +52,6 @@ class GameTests: XCTestCase {
         game.checkForWinner()
         
         // then
-        XCTAssertEqual(activePlayer, game.winner)
-    }
-    
-    func test_playerOCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
-        // given
-        let activePlayer = Player.O
-        let x = activePlayer.rawValue
-
-        game = Game(
-            activePlayer: activePlayer,
-            selectedBoardValues: [
-                x, x, x,
-                0, 0, 0,
-                0, 0, 0
-            ])
-        
-        // when
-        game.checkForWinner()
-        
-        // then
-        XCTAssertEqual(activePlayer, game.winner)
+        XCTAssertEqual(randomPlayer, game.winner)
     }
 }
