@@ -11,8 +11,12 @@ class GameMock: GameProtocol {
     var winner: Player?
     var updateSelectedBoardValueReceived: Int?
     var nextPlayer = Player.O
+    var error: GameError?
 
     func updateSelectedBoardValueAt(index: Int) throws {
+        if error != nil {
+            throw error!
+        }
         updateSelectedBoardValueReceived = index
     }
     
