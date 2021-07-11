@@ -9,7 +9,7 @@ class GameTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        game = Game()
+        game = Game(activePlayer: .X)
     }
     
     // MARK: - Initialising game
@@ -35,6 +35,15 @@ class GameTests: XCTestCase {
     func test_playerXCanWinGame() {
         game.checkForWinner()
         
-        XCTAssertEqual(PLayer.X, game.winner)
+        XCTAssertEqual(Player.X, game.winner)
+    }
+    
+    func test_playerOCanWinGame() {
+        // given
+        game = Game(activePlayer: .O)
+        // when
+        game.checkForWinner()
+        // then
+        XCTAssertEqual(Player.O, game.winner)
     }
 }
