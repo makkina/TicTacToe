@@ -271,12 +271,8 @@ class GameTests: XCTestCase {
     // MARK: - Switch Turns
     
     func test_canSwitchTurns_fromPlayerXToPlayerO() {
-        // given
-        game = GameFactory.game(activePlayer: Player.X)
-        // when
         game.switchTurn()
 
-        // then
         XCTAssertEqual(Player.O, game.activePlayer)
     }
     
