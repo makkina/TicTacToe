@@ -64,4 +64,17 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
+    
+    // MARK: - Error Handling
+    
+    func test_givenGameIsOverErrorWasThrown_errorLabelTextDisplayInvalidEntry() {
+        // given
+        gameMock.error = .gameIsOverError
+    
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        
+        // then
+        XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, game is over")
+    }
 }
