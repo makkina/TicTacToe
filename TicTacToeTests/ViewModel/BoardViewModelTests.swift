@@ -134,6 +134,16 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(boardButton.occupancy, .isFilled)
     }
     
+    func test_boardButtonDisplaysImageOfPlayerX_givenPlayerXIsActivePlayer() {
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+
+        // symbol is 􀆄
+        let image = UIImage(
+            systemName: "xmark",
+            withConfiguration: UIImage.SymbolConfiguration(pointSize: 50))
+        XCTAssertEqual(image, boardButton.currentImage)
+    }
+    
     // @todo: Reset game
     // @todo: restartGameButtonIsHidden
 }
