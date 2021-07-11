@@ -267,4 +267,17 @@ class GameTests: XCTestCase {
             XCTAssertEqual(error as? GameError, GameError.gameIsOverError)
         }
     }
+    
+    // MARK: - Switch Turns
+    
+    func test_canSwitchTurns() {
+        // given
+        game = GameFactory.game(activePlayer: Player.X)
+
+        // when
+        game.switchTurn()
+
+        // then
+        XCTAssertEqual(Player.O, game.activePlayer)
+    }
 }

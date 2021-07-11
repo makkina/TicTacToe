@@ -70,6 +70,10 @@ struct Game {
             gameState = .draw
         }
     }
+    
+    mutating func switchTurn() {
+        activePlayer = activePlayer == .X ? .O : .O
+    }
 }
 
 // MARK: - Private Helper Methods
