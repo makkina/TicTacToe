@@ -16,6 +16,7 @@ enum GameState {
 enum GameError: Error {
     case indexOutOfRangeError
     case indexAlreadyPopulatedError
+    case gameIsOverError
 }
 
 struct Game {
@@ -55,6 +56,9 @@ struct Game {
         }
         guard selectedBoardValues[index] == 0 else {
             throw GameError.indexAlreadyPopulatedError
+        }
+        guard gameState != .won && gameState != .draw else {
+            throw GameError.gameIsOverError
         }
         selectedBoardValues[index] = activePlayer.rawValue
     }
