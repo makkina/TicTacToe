@@ -214,5 +214,23 @@ class GameTests: XCTestCase {
         XCTAssertNotEqual(GameState.draw, game.gameState)
     }
     
-    // @TODO: update Board Values selected by user
+    // MARK: - User Selection
+    
+    func test_updateSelectedBoardValueWithPlayerSelection() {
+        // given
+        let x = randomPlayer.rawValue
+        var game = GameFactory.game(activePlayer: randomPlayer)
+        let index = 6
+        
+        // when
+        game.updateSelectedBoardValueAt(index)
+        
+        // then
+        let expectationState = [
+            0, 0, 0,
+            0, 0, 0,
+            x, 0, 0
+        ]
+        XCTAssertEqual(expectationState, game.selectedBoardValues)
+    }
 }
