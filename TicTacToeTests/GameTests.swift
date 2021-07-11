@@ -14,9 +14,6 @@ class GameTests: XCTestCase {
     
     // MARK: - Initialising game
 
-    func test_canCreateGame() {
-    }
-      
     func test_setsActivePlayerToX() {
         XCTAssertEqual(Player.X, game.activePlayer)
     }
