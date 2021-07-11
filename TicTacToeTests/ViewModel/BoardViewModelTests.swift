@@ -7,10 +7,12 @@ class BoardViewModelTests: XCTestCase {
     
     private var gameMock: GameMock!
     private var viewModel: BoardViewModel!
-
+    private var randomValidSelection: Int!
+    
     override func setUp() {
         gameMock = GameFactory.gameMock()
         viewModel = BoardViewModel(game: gameMock)
+        randomValidSelection = Int.random(in: 0...8)
     }
     
     // MARK: - Initialising BoardViewModel
@@ -30,24 +32,18 @@ class BoardViewModelTests: XCTestCase {
     // MARK: - Playing Game
 
     func test_givenPlayerSelectsBetween0And8_viewModelCanSendSelectionToGame() {
-        // given
-        let index = Int.random(in: 0...8)
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
         
-        // when
-        viewModel.playerSelectedBoardValueAt(index: index)
-        
-        // then
-        XCTAssertEqual(index, gameMock.updateSelectedBoardValueReceived)
+        XCTAssertEqual(randomValidSelection, gameMock.updateSelectedBoardValueReceived)
     }
     
     func test_givenPlayerXMadeASelection_gameLabelTextWillDisplayPlayerOTurn() {
         // given
         gameMock.activePlayer = .X
         gameMock.nextPlayer = .O
-        let index = Int.random(in: 0...8)
 
         // when
-        viewModel.playerSelectedBoardValueAt(index: index)
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
 
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player O turn")
