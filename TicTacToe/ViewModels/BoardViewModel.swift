@@ -21,6 +21,10 @@ final class BoardViewModel {
         game.checkForDraw()
         game.switchTurn()
         gameLabelText = game.activePlayer.name + " turn"
+        
+        if game.gameState == .won {
+            gameLabelText = game.winner!.name + " won"
+        }
     }
 }
 
