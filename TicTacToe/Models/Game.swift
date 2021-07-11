@@ -19,7 +19,7 @@ enum GameError: Error {
     case gameIsOverError
 }
 
-struct Game {
+struct Game: GameProtocol {
     /*
      `selectedBoardValues` entries can have the following states:
         0 => Unselected
