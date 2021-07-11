@@ -20,11 +20,7 @@ final class BoardViewModel {
         game.checkForWinner()
         game.checkForDraw()
         game.switchTurn()
-        gameLabelText = game.activePlayer.name + " turn"
-        
-        if game.gameState == .won {
-            gameLabelText = game.winner!.name + " won"
-        }
+        updateGameLabelText()
     }
 }
 
@@ -44,6 +40,14 @@ extension BoardViewModel {
             errorLabelText = "Invalid entry, please try again"
         } catch {
             errorLabelText = ""
+        }
+    }
+
+    private func updateGameLabelText() {
+        gameLabelText = game.activePlayer.name + " turn"
+        
+        if game.gameState == .won {
+            gameLabelText = game.winner!.name + " won"
         }
     }
 }
