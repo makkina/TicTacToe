@@ -2,6 +2,6 @@
 
 import Foundation
 
-class BoardViewModel {
+final class BoardViewModel {
     
 }
