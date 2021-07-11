@@ -138,9 +138,7 @@ class BoardViewModelTests: XCTestCase {
         viewModel.playerSelectedBoardValueAt(square: boardButton)
 
         // symbol is 􀆄
-        let image = UIImage(
-            systemName: "xmark",
-            withConfiguration: UIImage.SymbolConfiguration(pointSize: 50))
+        let image = UIImage.withSymbolName("xmark")
         XCTAssertEqual(image, boardButton.currentImage)
     }
     
