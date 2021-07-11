@@ -7,12 +7,13 @@ class BoardViewModelTests: XCTestCase {
     
     private var gameMock: GameMock!
     private var viewModel: BoardViewModel!
-    private var randomValidSelection: Int!
+    private var boardButton: BoardButton!
     
     override func setUp() {
         gameMock = GameFactory.gameMock()
         viewModel = BoardViewModel(game: gameMock)
-        randomValidSelection = Int.random(in: 0...8)
+        boardButton = BoardButton()
+        boardButton.tag = Int.random(in: 0...8)
     }
     
     // MARK: - Initialising BoardViewModel
@@ -36,9 +37,9 @@ class BoardViewModelTests: XCTestCase {
     // MARK: - Playing Game
 
     func test_givenPlayerSelectsBetween0And8_viewModelCanSendSelectionToGame() {
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
-        XCTAssertEqual(randomValidSelection, gameMock.updateSelectedBoardValueReceived)
+        XCTAssertEqual(boardButton.tag-1, gameMock.updateSelectedBoardValueReceived)
     }
     
     func test_givenPlayerXMadeASelection_gameLabelTextWillDisplayPlayerOTurn() {
@@ -47,7 +48,7 @@ class BoardViewModelTests: XCTestCase {
         gameMock.nextPlayer = .O
 
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
 
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player O turn")
@@ -59,18 +60,18 @@ class BoardViewModelTests: XCTestCase {
         gameMock.nextPlayer = .X
 
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
 
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
 
-    // MARK: - Check of Game is Over
+    // MARK: - Check if Game is Over
     
     func test_checkForWinnerIsCalledAfterEveryPlayerSelection() {
         gameMock.checkForWinnerIsCalled = false
         
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         XCTAssertTrue(gameMock.checkForWinnerIsCalled)
     }
@@ -78,7 +79,7 @@ class BoardViewModelTests: XCTestCase {
     func test_checkForDrawIsCalledAfterEveryPlayerSelection() {
         gameMock.checkForDrawIsCalled = false
         
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         XCTAssertTrue(gameMock.checkForDrawIsCalled)
     }
@@ -91,7 +92,7 @@ class BoardViewModelTests: XCTestCase {
         gameMock.winner = Player.X
         
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player X won")
@@ -103,7 +104,7 @@ class BoardViewModelTests: XCTestCase {
         gameMock.winner = Player.O
         
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player O won")
@@ -114,12 +115,14 @@ class BoardViewModelTests: XCTestCase {
         gameMock.gameState = .draw
         
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.gameLabelText, "It's a draw")
     }
+    
     // @todo: Reset game
+    // @todo: restartGameButtonIsHidden
 }
 
 // MARK: - Error Handling
@@ -131,7 +134,7 @@ extension BoardViewModelTests {
         gameMock.error = .gameIsOverError
     
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, game is over")
@@ -142,7 +145,7 @@ extension BoardViewModelTests {
         gameMock.error = .indexOutOfRangeError
     
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, unrecognized value")
@@ -153,7 +156,7 @@ extension BoardViewModelTests {
         gameMock.error = .indexAlreadyPopulatedError
     
         // when
-        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
         
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, please try again")
