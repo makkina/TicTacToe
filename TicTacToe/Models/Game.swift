@@ -2,9 +2,9 @@
 
 import Foundation
 
-enum Player {
-    case X
-    case O
+enum Player: Int {
+    case X = 1
+    case O = 2
 }
 
 enum GameState {
@@ -22,16 +22,22 @@ struct Game {
     private (set) var winner: Player?
     private (set) var selectedBoardValues: [Int]
     
-    init(activePlayer: Player) {
+    init(activePlayer: Player, selectedBoardValues: [Int]) {
         self.activePlayer = activePlayer
         self.gameState = .playing
         self.winner = nil
-        self.selectedBoardValues = [Int](repeating: 0, count: 9)
+        self.selectedBoardValues = selectedBoardValues
     }
     
     // MARK: - Game Won
     
     mutating func checkForWinner() {
-        winner = activePlayer
+        let firstWinningHorizontalCombination: [Int] = [0, 1, 2]
+        
+        if selectedBoardValues[firstWinningHorizontalCombination[0]] == activePlayer.rawValue &&
+            selectedBoardValues[firstWinningHorizontalCombination[1]] == activePlayer.rawValue &&
+            selectedBoardValues[firstWinningHorizontalCombination[2]] == activePlayer.rawValue {
+            winner = activePlayer
+        }
     }
 }
