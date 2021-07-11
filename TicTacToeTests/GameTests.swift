@@ -5,15 +5,19 @@ import XCTest
 
 class GameTests: XCTestCase {
 
+    private var game: Game!
+    
+    override func setUp() {
+        super.setUp()
+        game = Game()
+    }
+    
     // MARK: - Initialising game
 
     func test_canCreateGame() {
-        let game = Game()
     }
       
     func test_setsActivePlayerToX() {
-        let game = Game()
-        
         XCTAssertEqual(Player.X, game.activePlayer)
     }
 }
