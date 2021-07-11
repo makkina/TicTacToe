@@ -1,6 +1,7 @@
 // Created 11/07/2021
 
 import Foundation
+import UIKit
 
 final class BoardViewModel {
     
@@ -19,6 +20,9 @@ final class BoardViewModel {
         let index = square.tag-1
         tryUpdateSelectedBoardValue(index)
         square.occupancy = .isFilled
+        square.setImage(UIImage(
+                            systemName: "xmark",
+                            withConfiguration: UIImage.SymbolConfiguration(pointSize: 50)), for: .normal)
         game.checkForWinner()
         game.checkForDraw()
         game.switchTurn()
