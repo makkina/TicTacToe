@@ -23,6 +23,7 @@
 		F0E6492E269B603500C07B45 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492D269B603500C07B45 /* BoardViewModel.swift */; };
 		F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */; };
 		F0E64934269B6C5000C07B45 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64933269B6C5000C07B45 /* GameProtocol.swift */; };
+		F0E64936269B6E1800C07B45 /* GameMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64935269B6E1800C07B45 /* GameMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		F0E6492D269B603500C07B45 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
 		F0E64933269B6C5000C07B45 /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
+		F0E64935269B6E1800C07B45 /* GameMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E6492A269B0F6400C07B45 /* GameFactory.swift */,
+				F0E64935269B6E1800C07B45 /* GameMock.swift */,
 			);
 			path = MockClasses;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */,
+				F0E64936269B6E1800C07B45 /* GameMock.swift in Sources */,
 				F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */,
 				F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */,
 			);
