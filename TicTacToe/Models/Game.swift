@@ -27,7 +27,7 @@ struct Game {
         // Vertical
         [0, 3, 6], [1, 4, 7], [2, 5, 8],
         // Diagonal
-        [0, 4, 8]
+        [0, 4, 8], [2, 4, 6]
     ]
     
     init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState, winner: Player? = nil) {
