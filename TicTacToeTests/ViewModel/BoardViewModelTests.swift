@@ -97,6 +97,18 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.gameLabelText, "Player X won")
     }
     
+    func test_givenPlayerOWon_gameLabelTextReadsPlayerOWon() {
+        // given
+        gameMock.gameState = .won
+        gameMock.winner = Player.O
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+        
+        // then
+        XCTAssertEqual(viewModel.gameLabelText, "Player O won")
+    }
+    
     // @todo: Reset game
 }
 
