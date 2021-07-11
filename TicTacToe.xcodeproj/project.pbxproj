@@ -20,6 +20,8 @@
 		F0E6490D269AB6E900C07B45 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6490C269AB6E900C07B45 /* TicTacToeUITests.swift */; };
 		F0E64927269AFE5000C07B45 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64926269AFE5000C07B45 /* Game.swift */; };
 		F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492A269B0F6400C07B45 /* GameFactory.swift */; };
+		F0E6492E269B603500C07B45 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492D269B603500C07B45 /* BoardViewModel.swift */; };
+		F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +67,8 @@
 		F0E6490E269AB6E900C07B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0E64926269AFE5000C07B45 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		F0E6492A269B0F6400C07B45 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
+		F0E6492D269B603500C07B45 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,7 @@
 			children = (
 				F0E64929269B0F5900C07B45 /* MockClasses */,
 				F0E64928269B0F4B00C07B45 /* Model */,
+				F0E6492C269B600C00C07B45 /* ViewModel */,
 				F0E64903269AB6E900C07B45 /* Info.plist */,
 			);
 			path = TicTacToeTests;
@@ -195,6 +200,7 @@
 		F0E6491D269ABC7700C07B45 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				F0E6492D269B603500C07B45 /* BoardViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -276,6 +282,14 @@
 				F0E6492A269B0F6400C07B45 /* GameFactory.swift */,
 			);
 			path = MockClasses;
+			sourceTree = "<group>";
+		};
+		F0E6492C269B600C00C07B45 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,6 +517,7 @@
 				F0E648EB269AB6E600C07B45 /* AppDelegate.swift in Sources */,
 				F0E648ED269AB6E600C07B45 /* SceneDelegate.swift in Sources */,
 				F0E64927269AFE5000C07B45 /* Game.swift in Sources */,
+				F0E6492E269B603500C07B45 /* BoardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +527,7 @@
 			files = (
 				F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */,
 				F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */,
+				F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
