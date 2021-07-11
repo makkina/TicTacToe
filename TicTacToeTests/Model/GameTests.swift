@@ -182,6 +182,13 @@ class GameTests: XCTestCase {
         XCTAssertEqual(randomPlayer, game.winner)
     }
 
+    // MARK: - Game Draw
+    
+    func test_canDraw() {
+        game.checkForDraw()
+
+        XCTAssertEqual(GameState.draw, game.gameState)
+    }
     // @TODO: check for draw
     // @TODO: update Board Values selected by user
     // @TODO: update Game State
