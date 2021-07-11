@@ -18,15 +18,15 @@ struct Game {
     // MARK: - Init Game
     
     private (set) var activePlayer: Player
+    private (set) var selectedBoardValues: [Int]
     private (set) var gameState: GameState
     private (set) var winner: Player?
-    private (set) var selectedBoardValues: [Int]
-    
-    init(activePlayer: Player, selectedBoardValues: [Int]) {
-        self.activePlayer = activePlayer
-        self.gameState = .playing
-        self.winner = nil
+
+    init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState, winner: Player? = nil) {
         self.selectedBoardValues = selectedBoardValues
+        self.activePlayer = activePlayer
+        self.gameState = gameState
+        self.winner = winner
     }
     
     // MARK: - Game Won

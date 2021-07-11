@@ -19,6 +19,7 @@
 		F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64901269AB6E900C07B45 /* GameTests.swift */; };
 		F0E6490D269AB6E900C07B45 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6490C269AB6E900C07B45 /* TicTacToeUITests.swift */; };
 		F0E64927269AFE5000C07B45 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64926269AFE5000C07B45 /* Game.swift */; };
+		F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492A269B0F6400C07B45 /* GameFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		F0E6490C269AB6E900C07B45 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		F0E6490E269AB6E900C07B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0E64926269AFE5000C07B45 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		F0E6492A269B0F6400C07B45 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +161,8 @@
 		F0E64900269AB6E900C07B45 /* TicTacToeTests */ = {
 			isa = PBXGroup;
 			children = (
-				F0E64901269AB6E900C07B45 /* GameTests.swift */,
+				F0E64929269B0F5900C07B45 /* MockClasses */,
+				F0E64928269B0F4B00C07B45 /* Model */,
 				F0E64903269AB6E900C07B45 /* Info.plist */,
 			);
 			path = TicTacToeTests;
@@ -257,6 +260,22 @@
 			children = (
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		F0E64928269B0F4B00C07B45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F0E64901269AB6E900C07B45 /* GameTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F0E64929269B0F5900C07B45 /* MockClasses */ = {
+			isa = PBXGroup;
+			children = (
+				F0E6492A269B0F6400C07B45 /* GameFactory.swift */,
+			);
+			path = MockClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -491,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */,
 				F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

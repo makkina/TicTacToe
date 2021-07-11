@@ -10,10 +10,7 @@ class GameTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        game = Game(
-            activePlayer: .X,
-            selectedBoardValues: [Int](repeating: 0, count: 9)
-        )
+        game = GameFactory.game()
         randomPlayer = [Player.X, Player.O].randomElement()!
     }
     
@@ -40,7 +37,7 @@ class GameTests: XCTestCase {
     func test_randomPlayerCanWin_givenTheFirstWinningHorizontalCombinationWasFound() {
         // given
         let x = randomPlayer.rawValue
-        game = Game(
+        game = GameFactory.game(
             activePlayer: randomPlayer,
             selectedBoardValues: [
                 x, x, x,
