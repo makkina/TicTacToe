@@ -8,11 +8,7 @@ class BoardViewModelTests: XCTestCase {
     private var viewModel: BoardViewModel!
 
     override func setUp() {
-        viewModel = BoardViewModel(game: Game(
-            activePlayer: .X,
-            selectedBoardValues: [Int](repeating: 0, count: 9),
-            gameState: .playing
-        ))
+        viewModel = BoardViewModel(game: GameFactory.game())
     }
     
     // MARK: - Initialising BoardViewModel
