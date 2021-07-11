@@ -255,4 +255,20 @@ class GameTests: XCTestCase {
             XCTAssertEqual(error as? GameError, GameError.indexAlreadyPopulatedError)
         }
     }
+    
+    func test_givenGameIsOver_throwGameIsOverError() {
+        // given
+        let x = 0
+        let index = 3
+        game = GameFactory.game(
+            gameState: .won,
+            selectedBoardValues: [1, 1, 1, x, x, x, x, x, x]
+        )
+
+        // when
+        XCTAssertThrowsError(try game.updateSelectedBoardValueAt(index: index)) { error in
+            // then
+            XCTAssertEqual(error as? GameError, GameError.gameIsOverError)
+        }
+    }
 }
