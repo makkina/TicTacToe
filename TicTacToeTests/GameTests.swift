@@ -17,4 +17,8 @@ class GameTests: XCTestCase {
     func test_setsActivePlayerToX() {
         XCTAssertEqual(Player.X, game.activePlayer)
     }
+    
+    func test_setsGameStateIsPlaying() {
+        XCTAssertEqual(GameState.playing, game.gameState)
+    }
 }

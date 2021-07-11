@@ -7,11 +7,19 @@ enum Player {
     case O
 }
 
+enum GameState {
+    case playing
+    case draw
+    case won
+}
+
 struct Game {
 
     private (set) var activePlayer: Player
-    
+    private (set) var gameState: GameState
+
     init() {
         self.activePlayer = .X
+        self.gameState = .playing
     }
 }
