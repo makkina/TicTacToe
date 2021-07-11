@@ -48,4 +48,16 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(viewModel.gameLabelText, "Player O turn")
     }
+    
+    func test_givenPlayerOMadeASelection_gameLabelTextWillDisplayPlayerXTurn() {
+        // given
+        gameMock.activePlayer = .O
+        gameMock.nextPlayer = .X
+
+        // when
+        viewModel.playerSelectedBoardValueAt(index: randomValidSelection)
+
+        // then
+        XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
+    }
 }
