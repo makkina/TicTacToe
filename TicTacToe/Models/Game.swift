@@ -9,5 +9,9 @@ enum Player {
 
 struct Game {
 
-    private(set) var activePlayer: Player = .X
+    private (set) var activePlayer: Player
+    
+    init() {
+        self.activePlayer = .X
+    }
 }
