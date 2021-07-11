@@ -25,4 +25,8 @@ class GameTests: XCTestCase {
     func test_setsWinnerToNil() {
         XCTAssertNil(game.winner)
     }
+    
+    func test_setsSelectedBoardValuesTo9Zeros() {
+         XCTAssertEqual([0, 0, 0, 0, 0, 0, 0, 0, 0], game.selectedBoardValues)
+     }
 }
