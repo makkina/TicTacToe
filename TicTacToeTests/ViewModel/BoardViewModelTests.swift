@@ -11,12 +11,9 @@ class BoardViewModelTests: XCTestCase {
         viewModel = BoardViewModel()
     }
     
-    func test_canCreateBoardViewModel() {
-    }
-    
     // MARK: - Initialising BoardViewModel
     
-    func test_setsGameToNotNil() {        
+    func test_setsGameToNotNil() {
         XCTAssertNotNil(viewModel.game)
     }
 }
