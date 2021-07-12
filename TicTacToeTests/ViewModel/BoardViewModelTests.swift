@@ -159,6 +159,17 @@ class BoardViewModelTests: XCTestCase {
         )
     }
 
+    func test_givenInvalidIndex_squareImageRemainsUnchanged() {
+        // given
+        gameMock.error = .gameIsOverError
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+
+        // then
+        XCTAssertNil(boardButton.currentImage)
+    }
+    
     // @todo: Reset game
     // @todo: restartGameButtonIsHidden
 }
