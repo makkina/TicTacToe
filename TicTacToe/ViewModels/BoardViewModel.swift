@@ -23,9 +23,9 @@ final class BoardViewModel {
 
 // MARK: - Private Helper Methods
 
-extension BoardViewModel {
+private extension BoardViewModel {
     
-    private func updateBoardIfNoErrorsFound(_ square: BoardButton) {
+    func updateBoardIfNoErrorsFound(_ square: BoardButton) {
         if updatedSelectedBoardValueWithoutErrors(index: square.tag-1) {
             square.occupancy = .isFilledBy(game.activePlayer)
             game.checkForWinner()
@@ -34,7 +34,7 @@ extension BoardViewModel {
         }
     }
     
-    private func updatedSelectedBoardValueWithoutErrors(index: Int) -> Bool {
+    func updatedSelectedBoardValueWithoutErrors(index: Int) -> Bool {
         errorLabelText = ""
         do {
             try game.updateSelectedBoardValueAt(index: index)
@@ -50,7 +50,7 @@ extension BoardViewModel {
         return errorLabelText == ""
     }
 
-    private func updateGameLabelText() {
+    func updateGameLabelText() {
         gameLabelText = game.activePlayer.name + " turn"
         
         if game.gameState == .won {
