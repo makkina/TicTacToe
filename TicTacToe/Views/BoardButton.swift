@@ -16,7 +16,7 @@ enum Occupancy: Equatable {
     }
 }
 
-class BoardButton: UIButton {
+final class BoardButton: UIButton {
 
     var occupancy: Occupancy = .isEmpty {
         didSet {
@@ -29,6 +29,7 @@ class BoardButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        tintColor = .white
         layer.cornerRadius = 15
     }
 }
