@@ -241,8 +241,15 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertNil(viewModel.game.winner)
     }
 
+    func test_givenGameIsOver_restartGameButtonIsHiddenIsFalse() {
+        // given
+        gameMock.gameState = .won
+
+        // then
+        XCTAssertFalse(viewModel.restartGameButtonIsHidden)
+    }
+    
     // @todo: Reset Squares
-    // @todo: restartGameButtonIsHidden
 }
 
 // MARK: - Error Handling
