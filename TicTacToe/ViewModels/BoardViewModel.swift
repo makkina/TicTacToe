@@ -16,11 +16,12 @@ final class BoardViewModel {
     // MARK: - Playing Game
     
     func playerSelectedBoardValueAt(square: BoardButton) {
-        tryUpdateSelectedBoardValue(index: square.tag-1)
-        square.occupancy = .isFilledBy(game.activePlayer)
-        game.checkForWinner()
-        game.checkForDraw()
-        game.switchTurn()
+        if updatedSelectedBoardValueWithoutErrors(index: square.tag-1) {
+            square.occupancy = .isFilledBy(game.activePlayer)
+            game.checkForWinner()
+            game.checkForDraw()
+            game.switchTurn()
+        }
         updateGameLabelText()
     }
 }
@@ -29,7 +30,7 @@ final class BoardViewModel {
 
 extension BoardViewModel {
     
-    private func tryUpdateSelectedBoardValue(index: Int) {
+    private func updatedSelectedBoardValueWithoutErrors(index: Int) -> Bool {
         errorLabelText = ""
         do {
             try game.updateSelectedBoardValueAt(index: index)
@@ -42,6 +43,7 @@ extension BoardViewModel {
         } catch {
             errorLabelText = ""
         }
+        return errorLabelText == ""
     }
 
     private func updateGameLabelText() {
