@@ -7,17 +7,17 @@ final class BoardViewController: UIViewController {
     private var viewModel: BoardViewModel = BoardViewModel(game: GameFactory.game())
     
     @IBOutlet weak var gameLabel: UILabel!
-    
     @IBOutlet weak var errorLabel: UILabel!
-    
     @IBOutlet weak var resetGameButton: UIButton!
-    
     @IBOutlet var allBoardButtons: [BoardButton]!
     
-    @IBAction func resetGameButtonPressed(_ sender: Any) {
-        
+    @IBAction func resetGameButtonPressed(_ sender: UIButton) {}
+    
+    @IBAction func boardButtonPressed(_ boardButton: BoardButton) {
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+        updateView()
     }
-
+    
     // MARK: - Setup
     
     override func viewDidLoad() {

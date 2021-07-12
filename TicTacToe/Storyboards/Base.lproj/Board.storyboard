@@ -40,6 +40,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="Lad-Jf-KPv"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-bw-9VP" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="126.5" y="0.0" width="121" height="121.5"/>
@@ -49,6 +52,9 @@
                                                         <state key="normal" image="xmark" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="ypS-bA-Asb"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-qD-ipd" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="121.5"/>
@@ -58,6 +64,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="kJW-Lx-Yoo"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -72,6 +81,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="5jm-GM-Ch3"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1c-Ue-Ick" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="126.5" y="0.0" width="121" height="121"/>
@@ -81,6 +93,9 @@
                                                         <state key="normal" image="xmark" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="qaO-I3-pom"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1e-xE-Mgd" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="121"/>
@@ -90,6 +105,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="Afw-cP-ock"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -104,6 +122,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="5YV-Ai-s75"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfi-7S-MCb" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="126.5" y="0.0" width="121" height="121.5"/>
@@ -113,6 +134,9 @@
                                                         <state key="normal" image="xmark" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="BWo-CM-RGh"/>
+                                                        </connections>
                                                     </button>
                                                     <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDt-c9-T89" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
                                                         <rect key="frame" x="252.5" y="0.0" width="121.5" height="121.5"/>
@@ -122,6 +146,9 @@
                                                         <state key="normal" image="circle" catalog="system">
                                                             <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="boardButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="6my-11-LUy"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
