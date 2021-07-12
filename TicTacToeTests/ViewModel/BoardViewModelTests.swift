@@ -256,7 +256,7 @@ class BoardViewModelTests: XCTestCase {
         boardButton.occupancy = .isFilledBy(.X)
         
         // when
-        viewModel.resetBoardButton(boardButton: boardButton)
+        viewModel.resetBoardButtons(boardButtons: [boardButton])
         
         // then
         XCTAssertEqual(Occupancy.isEmpty, boardButton.occupancy)

@@ -29,8 +29,10 @@ final class BoardViewModel {
         game = GameFactory.game()
     }
     
-    func resetBoardButton(boardButton: BoardButton) {
-        boardButton.occupancy = .isEmpty
+    func resetBoardButtons(boardButtons: [BoardButton]) {
+        for b in boardButtons {
+            b.occupancy = .isEmpty
+        }
     }
 }
 
