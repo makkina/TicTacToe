@@ -125,13 +125,14 @@ class BoardViewModelTests: XCTestCase {
     
     func test_boardButtonOccupancyGetsFilled_givenItWasSelectedByPlayer() {
         // given
+        let p = gameMock.activePlayer
         boardButton.occupancy = .isEmpty
 
         // when
         viewModel.playerSelectedBoardValueAt(square: boardButton)
 
         // then
-        XCTAssertEqual(boardButton.occupancy, .isFilled)
+        XCTAssertEqual(boardButton.occupancy, .isFilledBy(p))
     }
     
     func test_boardButtonDisplaysImageOfPlayerX_givenPlayerXIsActivePlayer() {
