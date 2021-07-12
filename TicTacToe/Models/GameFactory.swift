@@ -7,8 +7,7 @@ struct GameFactory {
     static func game(
         activePlayer: Player = .X,
         gameState: GameState = .playing,
-        selectedBoardValues: [Int] = [Int](repeating: 0, count: 9),
-        winner: Player? = nil
+        selectedBoardValues: [Int] = [Int](repeating: 0, count: 9)
     ) -> Game {
         
         return Game(
