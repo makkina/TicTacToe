@@ -159,7 +159,7 @@ class BoardViewModelTests: XCTestCase {
         )
     }
 
-    func test_givenInvalidIndex_squareImageRemainsUnchanged() {
+    func test_givenGameErrorWasThrow_squareImageRemainsUnchanged() {
         // given
         gameMock.error = .gameIsOverError
         
