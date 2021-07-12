@@ -12,9 +12,9 @@ struct GameFactory {
     ) -> Game {
         
         return Game(
-            activePlayer: .X,
-            selectedBoardValues: [Int](repeating: 0, count: 9),
-            gameState: .playing
+            activePlayer: activePlayer,
+            selectedBoardValues: selectedBoardValues,
+            gameState: gameState
         )
     }
 }
