@@ -196,15 +196,16 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
     }
     
-    func test_restartGameSets() {
+    func test_restartGameResetsSelectedBoardValuesTo9Zeros() {
         // given
-        <#statements#>
+        gameMock.selectedBoardValues = [1, 1, 1, 2, 2, 2, 1, 2, 1]
+        
         // when
-        <#statements#>
+        viewModel.restartGame()
+        
         // then
-        <#statements#>
+        XCTAssertEqual([0, 0, 0, 0, 0, 0, 0, 0, 0], viewModel.game.selectedBoardValues)
     }
-
     
     // @todo: Reset Squares
     // @todo: restartGameButtonIsHidden

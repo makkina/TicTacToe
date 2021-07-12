@@ -5,6 +5,7 @@ import Foundation
 protocol GameProtocol {
     var activePlayer: Player { get }
     var gameState: GameState { get }
+    var selectedBoardValues: [Int] { get }
     var winner: Player? { get }
 
     mutating func updateSelectedBoardValueAt(index: Int) throws
