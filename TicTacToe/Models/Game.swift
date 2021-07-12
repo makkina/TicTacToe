@@ -36,11 +36,10 @@ struct Game: GameProtocol {
 
     // MARK: - Init Game
 
-    init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState, winner: Player? = nil) {
+    init(activePlayer: Player, selectedBoardValues: [Int], gameState: GameState) {
         self.selectedBoardValues = selectedBoardValues
         self.activePlayer = activePlayer
         self.gameState = gameState
-        self.winner = winner
     }
     
     // MARK: - Update Board
