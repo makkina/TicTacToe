@@ -217,6 +217,17 @@ class BoardViewModelTests: XCTestCase {
         // then
         XCTAssertEqual(Player.X, viewModel.game.activePlayer)
     }
+    
+    func test_restartGameResetsGameStateToPlaying() {
+        // given
+        gameMock.gameState = .draw
+        
+        // when
+        viewModel.restartGame()
+        
+        // then
+        XCTAssertEqual(GameState.playing, viewModel.game.gameState)
+    }
 
     // @todo: Reset Squares
     // @todo: restartGameButtonIsHidden
