@@ -249,7 +249,18 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertFalse(viewModel.restartGameButtonIsHidden)
     }
     
-    // @todo: Reset Squares
+    // MARK: - Reset Board Buttons
+    
+    func test_resetBoardButtonSetsOccupancyToIsEmpty() {
+        // given
+        boardButton.occupancy = .isFilledBy(.X)
+        
+        // when
+        viewModel.resetBoardButton(boardButton: boardButton)
+        
+        // then
+        XCTAssertEqual(Occupancy.isEmpty, boardButton.occupancy)
+    }
 }
 
 // MARK: - Error Handling

@@ -28,6 +28,10 @@ final class BoardViewModel {
         gameLabelText = "Player X turn"
         game = GameFactory.game()
     }
+    
+    func resetBoardButton(boardButton: BoardButton) {
+        boardButton.occupancy = .isEmpty
+    }
 }
 
 // MARK: - Private Helper Methods
