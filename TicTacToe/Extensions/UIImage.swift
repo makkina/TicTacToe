@@ -5,9 +5,8 @@ import UIKit
 extension UIImage {
     
     static func withSymbolName(_ symbolName: String) -> UIImage? {
-        return UIImage(
-            systemName: symbolName,
-            withConfiguration: UIImage.SymbolConfiguration(pointSize: 50)
+        return UIImage(systemName: symbolName,
+                       withConfiguration: UIImage.SymbolConfiguration(pointSize: 50)
         )
     }
 }
