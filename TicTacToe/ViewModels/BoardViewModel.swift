@@ -15,13 +15,17 @@ final class BoardViewModel {
     
     // MARK: - Playing Game
     
-    func playerSelectedBoardValueAt(square: BoardButton) {
+    private func updateBoardIfNoErrorsFound(_ square: BoardButton) {
         if updatedSelectedBoardValueWithoutErrors(index: square.tag-1) {
             square.occupancy = .isFilledBy(game.activePlayer)
             game.checkForWinner()
             game.checkForDraw()
             game.switchTurn()
         }
+    }
+    
+    func playerSelectedBoardValueAt(square: BoardButton) {
+        updateBoardIfNoErrorsFound(square)
         updateGameLabelText()
     }
 }
