@@ -17,8 +17,7 @@ final class BoardViewModel {
     // MARK: - Playing Game
     
     func playerSelectedBoardValueAt(square: BoardButton) {
-        let index = square.tag-1
-        tryUpdateSelectedBoardValue(index)
+        tryUpdateSelectedBoardValue(index: square.tag-1)
         square.occupancy = .isFilledBy(game.activePlayer)
         game.checkForWinner()
         game.checkForDraw()
@@ -31,7 +30,7 @@ final class BoardViewModel {
 
 extension BoardViewModel {
     
-    private func tryUpdateSelectedBoardValue(_ index: Int) {
+    private func tryUpdateSelectedBoardValue(index: Int) {
         errorLabelText = ""
         do {
             try game.updateSelectedBoardValueAt(index: index)
