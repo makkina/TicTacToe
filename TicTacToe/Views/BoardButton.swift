@@ -2,12 +2,16 @@
 
 import UIKit
 
-enum Occupancy {
+enum Occupancy: Equatable {
     case isEmpty
-    case isFilled
+    case isFilledBy(Player)
 }
 
 class BoardButton: UIButton {
 
-    var occupancy: Occupancy = .isEmpty
+    var occupancy: Occupancy = .isEmpty {
+        didSet {
+            setImage(UIImage.withSymbolName("xmark"), for: .normal)
+        }
+    }
 }
