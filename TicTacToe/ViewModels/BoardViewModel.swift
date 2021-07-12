@@ -30,9 +30,7 @@ final class BoardViewModel {
     }
     
     func resetBoardButtons(boardButtons: [BoardButton]) {
-        for b in boardButtons {
-            b.occupancy = .isEmpty
-        }
+        boardButtons.forEach { $0.occupancy = .isEmpty }
     }
 }
 
