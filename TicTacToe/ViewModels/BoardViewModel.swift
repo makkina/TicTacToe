@@ -22,6 +22,7 @@ final class BoardViewModel {
     
     func restartGame() {
         errorLabelText = ""
+        gameLabelText = "Player X turn"
     }
 }
 

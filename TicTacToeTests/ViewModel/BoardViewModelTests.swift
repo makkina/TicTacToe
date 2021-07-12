@@ -183,6 +183,17 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertEqual(viewModel.errorLabelText, "")
     }
     
+    func test_restartGameSetsGameLabelTextToPlayerXTurn() {
+        // given
+        gameMock.activePlayer = Player.O
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+
+        // when
+        viewModel.restartGame()
+        
+        XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
+    }
+
     
     // @todo: Reset Squares
     // @todo: restartGameButtonIsHidden
