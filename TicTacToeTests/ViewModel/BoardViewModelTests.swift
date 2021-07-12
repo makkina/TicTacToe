@@ -145,6 +145,20 @@ class BoardViewModelTests: XCTestCase {
         )
     }
     
+    func test_boardButtonDisplaysImageOfPlayerO_givenPlayerOIsActivePlayer() {
+        // given
+        gameMock.activePlayer = Player.O
+        
+        // when
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+
+        // then, symbol is 􀀀
+        XCTAssertEqual(
+            UIImage.withSymbolName("circle"),
+            boardButton.currentImage
+        )
+    }
+
     // @todo: Reset game
     // @todo: restartGameButtonIsHidden
 }

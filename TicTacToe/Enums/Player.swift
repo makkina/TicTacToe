@@ -14,4 +14,13 @@ enum Player: Int {
             return "Player O"
         }
     }
+    
+    var symbolName: String {
+         switch self {
+         case .X:
+             return "xmark"
+         case .O:
+             return "circle"
+         }
+     }
 }
