@@ -5,13 +5,17 @@ import XCTest
 
 class GameFactoryTests: XCTestCase {
     
+    private var game: Game!
+    
+    override func setUp() {
+        game = GameFactory.game()
+    }
+    
     func test_gameHasActivePlayerSetToPlayerX() {
-        let game = GameFactory.game()
         XCTAssertEqual(Player.X, game.activePlayer)
     }
     
     func test_gameHasSelectedBoardValuesSetToZero9times() {
-        let game = GameFactory.game()
         let expectedBoard = [
             0, 0, 0,
             0, 0, 0,
@@ -21,7 +25,6 @@ class GameFactoryTests: XCTestCase {
     }
     
     func test_gameHasGameStateSetToPlaying() {
-        let game = GameFactory.game()
         XCTAssertEqual(GameState.playing, game.gameState)
     }
 }
