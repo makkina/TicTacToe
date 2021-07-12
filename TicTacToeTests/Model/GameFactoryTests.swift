@@ -5,11 +5,7 @@ import XCTest
 
 class GameFactoryTests: XCTestCase {
     
-    private var game: Game!
-    
-    override func setUp() {
-        game = GameFactory.game()
-    }
+    private var game = GameFactory.game()
     
     func test_gameHasActivePlayerSetToPlayerX() {
         XCTAssertEqual(Player.X, game.activePlayer)
