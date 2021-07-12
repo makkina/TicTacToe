@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ASr-Vh-9jQ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,24 +10,203 @@
     </dependencies>
     <scenes>
         <!--Board View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="RVK-Fj-SUP">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BoardViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <viewController storyboardIdentifier="ViewController" id="ASr-Vh-9jQ" customClass="BoardViewController" customModule="TicTacToe" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ctj-i2-3nO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZQ-QN-K7r">
+                                <rect key="frame" x="20" y="166" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oam-2D-orx">
+                                <rect key="frame" x="20" y="266" width="374" height="374"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="v6u-z6-i5U">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="374"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3zK-xo-vSd">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="121.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Z5-7b-pOD" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392156862746" green="0.76862745098039209" blue="0.52941176470588236" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-bw-9VP" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="126.5" y="0.0" width="121" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="xmark" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cqi-qD-ipd" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392159999998" green="0.76862745099999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9ff-Al-Mqw">
+                                                <rect key="frame" x="0.0" y="126.5" width="374" height="121"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kou-cm-Aj5" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="121"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392159999998" green="0.76862745099999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1c-Ue-Ick" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="126.5" y="0.0" width="121" height="121"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="xmark" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P1e-xE-Mgd" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="121"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392159999998" green="0.76862745099999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="koQ-1n-dWN">
+                                                <rect key="frame" x="0.0" y="252.5" width="374" height="121.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bl-Ei-dAY" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="121.5" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392159999998" green="0.76862745099999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nfi-7S-MCb" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="126.5" y="0.0" width="121" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" systemColor="systemYellowColor"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="xmark" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                    <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZDt-c9-T89" customClass="BoardButton" customModule="TicTacToe" customModuleProvider="target">
+                                                        <rect key="frame" x="252.5" y="0.0" width="121.5" height="121.5"/>
+                                                        <color key="backgroundColor" red="0.043137254899999998" green="0.25882352939999997" blue="0.20784313730000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="tintColor" red="0.30980392159999998" green="0.76862745099999996" blue="0.52941176469999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                                        <state key="normal" image="circle" catalog="system">
+                                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="70"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12549019610000001" green="0.2784313725" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="v6u-z6-i5U" firstAttribute="top" secondItem="oam-2D-orx" secondAttribute="top" id="9Ub-TT-Uhy"/>
+                                    <constraint firstItem="v6u-z6-i5U" firstAttribute="leading" secondItem="oam-2D-orx" secondAttribute="leading" id="Itg-PZ-wg7"/>
+                                    <constraint firstAttribute="trailing" secondItem="v6u-z6-i5U" secondAttribute="trailing" id="Uku-3d-zCf"/>
+                                    <constraint firstAttribute="bottom" secondItem="v6u-z6-i5U" secondAttribute="bottom" id="rXq-7d-fGw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCk-6M-7H1">
+                                <rect key="frame" x="20" y="667" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.043137254901960784" green="0.25882352941176467" blue="0.20784313725490194" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration" identifier="playAgainButton"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="biE-L4-81f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <state key="normal" title="Play again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetGameButtonPressed:" destination="ASr-Vh-9jQ" eventType="touchUpInside" id="dlj-mP-9sh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hux-bl-fGM">
+                                <rect key="frame" x="20" y="198" width="374" height="22"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BmE-1h-1y3"/>
+                        <color key="backgroundColor" red="0.12549019610000001" green="0.2784313725" blue="0.23137254900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <accessibility key="accessibilityConfiguration" identifier="gridView"/>
+                        <constraints>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="centerX" secondItem="BmE-1h-1y3" secondAttribute="centerX" id="35Y-GM-a8P"/>
+                            <constraint firstItem="uCk-6M-7H1" firstAttribute="top" secondItem="9bl-Ei-dAY" secondAttribute="bottom" constant="27" id="6iK-fA-6ga"/>
+                            <constraint firstItem="hux-bl-fGM" firstAttribute="leading" secondItem="oam-2D-orx" secondAttribute="leading" id="FD6-9h-iCO"/>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="height" secondItem="Ctj-i2-3nO" secondAttribute="height" multiplier="0.417411" id="Uop-Uj-NA5"/>
+                            <constraint firstItem="hux-bl-fGM" firstAttribute="top" secondItem="BmE-1h-1y3" secondAttribute="top" constant="154" id="W8o-Nn-giS"/>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="top" secondItem="hux-bl-fGM" secondAttribute="bottom" constant="46" id="Xay-rU-pmt"/>
+                            <constraint firstItem="CZQ-QN-K7r" firstAttribute="trailing" secondItem="hux-bl-fGM" secondAttribute="trailing" id="bsC-Bf-MxB"/>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="width" secondItem="Ctj-i2-3nO" secondAttribute="width" multiplier="0.903382" id="e7B-f4-NuT"/>
+                            <constraint firstItem="CZQ-QN-K7r" firstAttribute="top" secondItem="BmE-1h-1y3" secondAttribute="top" constant="122" id="eVN-c9-0bo"/>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="top" secondItem="CZQ-QN-K7r" secondAttribute="bottom" constant="66" id="egZ-KS-TPs"/>
+                            <constraint firstItem="uCk-6M-7H1" firstAttribute="leading" secondItem="oam-2D-orx" secondAttribute="leading" id="gsw-Ar-HBR"/>
+                            <constraint firstItem="oam-2D-orx" firstAttribute="centerY" secondItem="BmE-1h-1y3" secondAttribute="centerY" id="kuh-YP-eYW"/>
+                            <constraint firstItem="hux-bl-fGM" firstAttribute="trailing" secondItem="oam-2D-orx" secondAttribute="trailing" id="mKB-Mq-WSr"/>
+                            <constraint firstItem="CZQ-QN-K7r" firstAttribute="leading" secondItem="hux-bl-fGM" secondAttribute="leading" id="mqw-69-991"/>
+                            <constraint firstItem="BmE-1h-1y3" firstAttribute="trailing" secondItem="uCk-6M-7H1" secondAttribute="trailing" constant="20" id="rJS-UP-Mdm"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="hux-bl-fGM" id="xa2-KD-rRV"/>
+                        <outlet property="gameLabel" destination="CZQ-QN-K7r" id="RvF-iN-4Uz"/>
+                        <outlet property="resetGameButton" destination="uCk-6M-7H1" id="ORx-ba-GPz"/>
+                        <outletCollection property="allBoardButtons" destination="5Z5-7b-pOD" collectionClass="NSMutableArray" id="fRi-n6-Xqe"/>
+                        <outletCollection property="allBoardButtons" destination="FOM-bw-9VP" collectionClass="NSMutableArray" id="cca-j4-BD9"/>
+                        <outletCollection property="allBoardButtons" destination="cqi-qD-ipd" collectionClass="NSMutableArray" id="yFB-UY-15c"/>
+                        <outletCollection property="allBoardButtons" destination="Kou-cm-Aj5" collectionClass="NSMutableArray" id="u9r-PH-EFj"/>
+                        <outletCollection property="allBoardButtons" destination="S1c-Ue-Ick" collectionClass="NSMutableArray" id="5j8-Oc-PCb"/>
+                        <outletCollection property="allBoardButtons" destination="P1e-xE-Mgd" collectionClass="NSMutableArray" id="uYm-by-2SJ"/>
+                        <outletCollection property="allBoardButtons" destination="9bl-Ei-dAY" collectionClass="NSMutableArray" id="bhF-Dl-rRP"/>
+                        <outletCollection property="allBoardButtons" destination="nfi-7S-MCb" collectionClass="NSMutableArray" id="sI7-eO-FtZ"/>
+                        <outletCollection property="allBoardButtons" destination="ZDt-c9-T89" collectionClass="NSMutableArray" id="dMe-IM-TtE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIN-dP-1qT" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="125"/>
+            <point key="canvasLocation" x="140.57971014492756" y="146.65178571428569"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="circle" catalog="system" width="128" height="121"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
