@@ -13,6 +13,8 @@
 		F053C616269B924500B65F1A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C615269B924500B65F1A /* Player.swift */; };
 		F053C61A269BB2DA00B65F1A /* BoardButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C619269BB2DA00B65F1A /* BoardButton.swift */; };
 		F053C61C269BBC4E00B65F1A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F053C61B269BBC4E00B65F1A /* UIImage.swift */; };
+		F07E403F269C47000084E98C /* GameFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E403E269C47000084E98C /* GameFactoryTests.swift */; };
+		F07E4041269C47870084E98C /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07E4040269C47870084E98C /* GameFactory.swift */; };
 		F0E648EB269AB6E600C07B45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EA269AB6E600C07B45 /* AppDelegate.swift */; };
 		F0E648ED269AB6E600C07B45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */; };
 		F0E648EF269AB6E600C07B45 /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E648EE269AB6E600C07B45 /* BoardViewController.swift */; };
@@ -22,7 +24,6 @@
 		F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64901269AB6E900C07B45 /* GameTests.swift */; };
 		F0E6490D269AB6E900C07B45 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6490C269AB6E900C07B45 /* TicTacToeUITests.swift */; };
 		F0E64927269AFE5000C07B45 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64926269AFE5000C07B45 /* Game.swift */; };
-		F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492A269B0F6400C07B45 /* GameFactory.swift */; };
 		F0E6492E269B603500C07B45 /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492D269B603500C07B45 /* BoardViewModel.swift */; };
 		F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */; };
 		F0E64934269B6C5000C07B45 /* GameProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E64933269B6C5000C07B45 /* GameProtocol.swift */; };
@@ -59,6 +60,8 @@
 		F053C615269B924500B65F1A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		F053C619269BB2DA00B65F1A /* BoardButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardButton.swift; sourceTree = "<group>"; };
 		F053C61B269BBC4E00B65F1A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		F07E403E269C47000084E98C /* GameFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactoryTests.swift; sourceTree = "<group>"; };
+		F07E4040269C47870084E98C /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		F0E648E7269AB6E600C07B45 /* TicTacToe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TicTacToe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0E648EA269AB6E600C07B45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F0E648EC269AB6E600C07B45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -74,7 +77,6 @@
 		F0E6490C269AB6E900C07B45 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		F0E6490E269AB6E900C07B45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F0E64926269AFE5000C07B45 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		F0E6492A269B0F6400C07B45 /* GameFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFactory.swift; sourceTree = "<group>"; };
 		F0E6492D269B603500C07B45 /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		F0E6492F269B605500C07B45 /* BoardViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModelTests.swift; sourceTree = "<group>"; };
 		F0E64933269B6C5000C07B45 /* GameProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameProtocol.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E64926269AFE5000C07B45 /* Game.swift */,
+				F07E4040269C47870084E98C /* GameFactory.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -286,6 +289,7 @@
 			isa = PBXGroup;
 			children = (
 				F0E64901269AB6E900C07B45 /* GameTests.swift */,
+				F07E403E269C47000084E98C /* GameFactoryTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +297,6 @@
 		F0E64929269B0F5900C07B45 /* MockClasses */ = {
 			isa = PBXGroup;
 			children = (
-				F0E6492A269B0F6400C07B45 /* GameFactory.swift */,
 				F0E64935269B6E1800C07B45 /* GameMock.swift */,
 			);
 			path = MockClasses;
@@ -528,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F07E4041269C47870084E98C /* GameFactory.swift in Sources */,
 				F053C61A269BB2DA00B65F1A /* BoardButton.swift in Sources */,
 				F0E648EF269AB6E600C07B45 /* BoardViewController.swift in Sources */,
 				F0E648EB269AB6E600C07B45 /* AppDelegate.swift in Sources */,
@@ -544,8 +548,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F0E6492B269B0F6400C07B45 /* GameFactory.swift in Sources */,
 				F0E64936269B6E1800C07B45 /* GameMock.swift in Sources */,
+				F07E403F269C47000084E98C /* GameFactoryTests.swift in Sources */,
 				F0E64902269AB6E900C07B45 /* GameTests.swift in Sources */,
 				F0E64930269B605500C07B45 /* BoardViewModelTests.swift in Sources */,
 			);

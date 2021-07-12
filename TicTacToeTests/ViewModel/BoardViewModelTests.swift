@@ -10,7 +10,7 @@ class BoardViewModelTests: XCTestCase {
     private var boardButton: BoardButton!
     
     override func setUp() {
-        gameMock = GameFactory.gameMock()
+        gameMock = GameMock()
         viewModel = BoardViewModel(game: gameMock)
         boardButton = BoardButton()
         boardButton.tag = Int.random(in: 0...8)
