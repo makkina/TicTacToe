@@ -23,6 +23,11 @@ final class BoardViewModel {
     func restartGame() {
         errorLabelText = ""
         gameLabelText = "Player X turn"
+        game = Game(
+            activePlayer: .X,
+            selectedBoardValues: [Int](repeating: 0, count: 9),
+            gameState: .playing
+        )
     }
 }
 
