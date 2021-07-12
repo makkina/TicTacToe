@@ -11,7 +11,12 @@ final class BoardViewController: UIViewController {
     @IBOutlet weak var resetGameButton: UIButton!
     @IBOutlet var allBoardButtons: [BoardButton]!
     
-    @IBAction func resetGameButtonPressed(_ sender: UIButton) {}
+    // MARK: - Actions
+    
+    @IBAction func resetGameButtonPressed(_ sender: UIButton) {
+        viewModel.restartGame()
+        setupView()
+    }
     
     @IBAction func boardButtonPressed(_ boardButton: BoardButton) {
         viewModel.playerSelectedBoardValueAt(square: boardButton)

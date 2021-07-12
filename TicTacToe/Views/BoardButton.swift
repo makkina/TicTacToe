@@ -23,4 +23,12 @@ class BoardButton: UIButton {
             setImage(occupancy.image, for: .normal)
         }
     }
+    
+    // MARK: - Init
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        layer.cornerRadius = 15
+    }
 }
