@@ -170,7 +170,21 @@ class BoardViewModelTests: XCTestCase {
         XCTAssertNil(boardButton.currentImage)
     }
     
-    // @todo: Reset game
+    // MARK: - Restart Game
+    
+    func test_restartGameSetsErrorLabelTextToEmptyString() {
+        // given
+        gameMock.error = .gameIsOverError
+        viewModel.playerSelectedBoardValueAt(square: boardButton)
+        
+        // when
+        viewModel.restartGame()
+        
+        XCTAssertEqual(viewModel.errorLabelText, "")
+    }
+    
+    
+    // @todo: Reset Squares
     // @todo: restartGameButtonIsHidden
 }
 
