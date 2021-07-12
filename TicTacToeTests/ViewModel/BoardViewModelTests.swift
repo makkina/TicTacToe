@@ -180,6 +180,7 @@ class BoardViewModelTests: XCTestCase {
         // when
         viewModel.restartGame()
         
+        // then
         XCTAssertEqual(viewModel.errorLabelText, "")
     }
     
@@ -191,7 +192,17 @@ class BoardViewModelTests: XCTestCase {
         // when
         viewModel.restartGame()
         
+        // then
         XCTAssertEqual(viewModel.gameLabelText, "Player X turn")
+    }
+    
+    func test_restartGameSets() {
+        // given
+        <#statements#>
+        // when
+        <#statements#>
+        // then
+        <#statements#>
     }
 
     
