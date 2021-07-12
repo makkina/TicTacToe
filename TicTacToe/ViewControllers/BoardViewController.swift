@@ -2,7 +2,9 @@
 
 import UIKit
 
-class BoardViewController: UIViewController {
+final class BoardViewController: UIViewController {
+    
+    private var viewModel: BoardViewModel = BoardViewModel(game: GameFactory.game())
     
     @IBOutlet weak var gameLabel: UILabel!
     
@@ -20,5 +22,19 @@ class BoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+    }
+    
+    private func setupView() {
+        updateView()
+        viewModel.resetBoardButtons(boardButtons: allBoardButtons)
+        resetGameButton.setTitle(viewModel.restartGameButtonText, for: .normal)
+        resetGameButton.layer.cornerRadius = CGFloat(viewModel.resetGameButtonCornerRadius)
+    }
+    
+    private func updateView() {
+        gameLabel.text = viewModel.gameLabelText
+        errorLabel.text = viewModel.errorLabelText
+        resetGameButton.isHidden = viewModel.restartGameButtonIsHidden
     }
 }
