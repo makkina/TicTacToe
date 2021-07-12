@@ -19,6 +19,10 @@ final class BoardViewModel {
         updateBoardIfNoErrorsFound(square)
         updateGameLabelText()
     }
+    
+    func restartGame() {
+        errorLabelText = ""
+    }
 }
 
 // MARK: - Private Helper Methods
