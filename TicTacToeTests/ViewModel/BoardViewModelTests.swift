@@ -299,4 +299,8 @@ extension BoardViewModelTests {
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, please try again")
     }
+    
+    // @todo: What if button is send but tag is missing?
+    // @todo: What if no button is send (check the type)
+    
 }
