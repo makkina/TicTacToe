@@ -2,25 +2,16 @@
 
 import UIKit
 
-enum Occupancy: Equatable {
-    case isEmpty
-    case isFilledBy(Player)
-    
-    var image: UIImage? {
-        switch self {
-        case .isFilledBy(let p):
-            return UIImage.withSymbolName(p.symbolName)
-        default:
-            return nil
-        }
-    }
+enum SymbolName: String {
+    case Xmark = "xmark"
+    case Circle = "circle"
 }
 
 final class BoardButton: UIButton {
 
-    var occupancy: Occupancy = .isEmpty {
+    var symbolName: SymbolName? {
         didSet {
-            setImage(occupancy.image, for: .normal)
+            setImage(UIImage.withSymbolName(symbolName?.rawValue ?? ""), for: .normal)
         }
     }
     
@@ -29,7 +20,7 @@ final class BoardButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        tintColor = .white
-        layer.cornerRadius = 15
+        self.tintColor = .white
+        self.layer.cornerRadius = 15
     }
 }

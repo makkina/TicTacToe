@@ -122,19 +122,20 @@ class BoardViewModelTests: XCTestCase {
     }
     
     // MARK: - Board Button
-    
-    func test_boardButtonOccupancyGetsFilled_givenItWasSelectedByPlayer() {
-        // given
-        let p = gameMock.activePlayer
-        boardButton.occupancy = .isEmpty
 
+    func test_boardButtonSymbolNameGetsFilled_givenItWasSelectedByRandomPlayer() {
+        // given
+        let randomPlayer = [Player.X, Player.O].randomElement()!
+        gameMock.activePlayer = randomPlayer
+        boardButton.symbolName = nil
+        
         // when
         viewModel.playerSelectedBoardValueAt(square: boardButton)
-
+        
         // then
-        XCTAssertEqual(boardButton.occupancy, .isFilledBy(p))
+        XCTAssertEqual(randomPlayer.symbolName, boardButton.symbolName)
     }
-    
+
     func test_boardButtonDisplaysImageOfPlayerX_givenPlayerXIsActivePlayer() {
         viewModel.playerSelectedBoardValueAt(square: boardButton)
 
@@ -251,15 +252,15 @@ class BoardViewModelTests: XCTestCase {
     
     // MARK: - Reset Board Buttons
     
-    func test_resetBoardButtonSetsOccupancyToIsEmpty() {
+    func test_resetBoardButtonSetsSymbolNameToNil() {
         // given
-        boardButton.occupancy = .isFilledBy(.X)
-        
+        boardButton.symbolName = .Circle
+
         // when
         viewModel.resetBoardButtons(boardButtons: [boardButton])
-        
+
         // then
-        XCTAssertEqual(Occupancy.isEmpty, boardButton.occupancy)
+        XCTAssertNil(boardButton.symbolName)
     }
 }
 
@@ -299,8 +300,4 @@ extension BoardViewModelTests {
         // then
         XCTAssertEqual(viewModel.errorLabelText, "Invalid entry, please try again")
     }
-    
-    // @todo: What if button is send but tag is missing?
-    // @todo: What if no button is send (check the type)
-    
 }
