@@ -3,15 +3,19 @@
 import UIKit
 
 enum SymbolName: String {
-    case Xmark = "xmark"
-    case Circle = "circle"
+    case xmark
+    case circle
+    
+    var image: UIImage? {
+        UIImage.withSymbolName(rawValue)
+    }
 }
 
 final class BoardButton: UIButton {
 
     var symbolName: SymbolName? {
         didSet {
-            setImage(UIImage.withSymbolName(symbolName?.rawValue ?? ""), for: .normal)
+            setImage(symbolName?.image, for: .normal)
         }
     }
     
