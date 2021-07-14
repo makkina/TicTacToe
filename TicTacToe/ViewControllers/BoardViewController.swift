@@ -8,14 +8,15 @@ final class BoardViewController: UIViewController {
     
     @IBOutlet weak var gameLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
-    @IBOutlet weak var resetGameButton: UIButton!
+    @IBOutlet weak var resetGameButton: ResetGameButton!
     @IBOutlet var allBoardButtons: [BoardButton]!
     
     // MARK: - Actions
     
-    @IBAction func resetGameButtonPressed(_ sender: UIButton) {
+    @IBAction func resetGameButtonPressed(_ sender: ResetGameButton) {
         viewModel.restartGame()
-        setupView()
+        viewModel.resetBoardButtons(boardButtons: allBoardButtons)
+        updateView()
     }
     
     @IBAction func boardButtonPressed(_ boardButton: BoardButton) {
@@ -27,14 +28,7 @@ final class BoardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-    }
-    
-    private func setupView() {
         updateView()
-        viewModel.resetBoardButtons(boardButtons: allBoardButtons)
-        resetGameButton.setTitle(viewModel.restartGameButtonText, for: .normal)
-        resetGameButton.layer.cornerRadius = CGFloat(viewModel.resetGameButtonCornerRadius)
     }
     
     private func updateView() {
