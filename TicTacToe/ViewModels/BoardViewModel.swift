@@ -32,7 +32,7 @@ final class BoardViewModel {
     }
     
     func resetBoardButtons(boardButtons: [BoardButton]) {
-        boardButtons.forEach { $0.occupancy = .isEmpty }
+        boardButtons.forEach { $0.symbolName = nil }
     }
 }
 
@@ -42,7 +42,7 @@ private extension BoardViewModel {
     
     func updateBoardIfNoErrorsFound(_ square: BoardButton) {
         if updatedSelectedBoardValueWithoutErrors(index: square.tag-1) {
-            square.occupancy = .isFilledBy(game.activePlayer)
+            square.symbolName = game.activePlayer.symbolName
             game.checkForWinner()
             game.checkForDraw()
             game.switchTurn()

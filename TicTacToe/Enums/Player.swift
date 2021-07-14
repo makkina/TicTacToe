@@ -15,12 +15,12 @@ enum Player: Int {
         }
     }
     
-    var symbolName: String {
-         switch self {
-         case .X:
-             return "xmark"
-         case .O:
-             return "circle"
-         }
-     }
+    var symbolName: SymbolName {
+        switch self {
+        case .X:
+            return .Xmark
+        case .O:
+            return .Circle
+        }
+    }
 }
