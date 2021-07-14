@@ -19,6 +19,7 @@ final class BoardButton: UIButton {
         
         self.tintColor = .white
         self.layer.cornerRadius = 15
+        self.symbolName = nil
     }
 }
 
