@@ -2,29 +2,27 @@
 
 import UIKit
 
-enum SymbolName: String {
-    case xmark
-    case circle
-    
-    var image: UIImage? {
-        UIImage.withSymbolName(rawValue)
-    }
-}
-
 final class BoardButton: UIButton {
-
+    
     var symbolName: SymbolName? {
         didSet {
-            setImage(symbolName?.image, for: .normal)
+            setImage(symbolImage, for: .normal)
         }
     }
     
-    // MARK: - Init
-    
+    private var symbolImage: UIImage? {
+        UIImage.withSymbolName(symbolName?.rawValue ?? "")
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         
         self.tintColor = .white
         self.layer.cornerRadius = 15
     }
+}
+
+enum SymbolName: String {
+    case xmark
+    case circle
 }
