@@ -18,9 +18,9 @@ enum Player: Int {
     var symbolName: SymbolName {
         switch self {
         case .X:
-            return .Xmark
+            return .xmark
         case .O:
-            return .Circle
+            return .circle
         }
     }
 }

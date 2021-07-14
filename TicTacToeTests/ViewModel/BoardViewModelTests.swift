@@ -254,7 +254,7 @@ class BoardViewModelTests: XCTestCase {
     
     func test_resetBoardButtonSetsSymbolNameToNil() {
         // given
-        boardButton.symbolName = .Circle
+        boardButton.symbolName = .circle
 
         // when
         viewModel.resetBoardButtons(boardButtons: [boardButton])
