@@ -1,14 +1,16 @@
 # TicTacToe
 
-2021-DEV2-046, TicTacToe Kata <br/>
-For the Rules on TicTacToe, please refer to [TTT Rules & Requirements]( https://github.com/stephane-genicot/katas/blob/master/TicTacToe.md)
-
+**Kata**: TicTacToe (TTT);  <br/>
+**Author**: 2021-DEV2-046;  <br/>
+**Rules & Requirements**: [TTT Rules & Requirements]( https://github.com/stephane-genicot/katas/blob/master/TicTacToe.md);
 
 ![](https://img.shields.io/badge/swift-5-blue.svg?logo=swift)
+
 
 ## Project Uses:
 
 - Test Driven Development (TDD)
+- Unit Tests + UITests
 - MVVM Architecture
 - SOLID Principles
 - SF Symbols
@@ -31,7 +33,7 @@ For the Rules on TicTacToe, please refer to [TTT Rules & Requirements]( https://
 
 # Setup
 
-Clone the  `develop` branch. <br/>
+Clone the  `main` branch. <br/>
 
 
 ## Running App
@@ -43,7 +45,7 @@ CMD + R
 ```
 
 
-## Unit Testing
+## Unit + UI Testing
 
 Open `TicTacToe.xcworkspace`  using Xcode & Run:
 
