@@ -9,5 +9,6 @@ final class ResetGameButton: UIButton {
         
         self.setTitle("Play Again", for: .normal)
         self.layer.cornerRadius = 10
+        self.accessibilityIdentifier = "resetGameButtonIdentifier"
     }
 }
