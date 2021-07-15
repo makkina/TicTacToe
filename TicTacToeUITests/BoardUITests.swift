@@ -14,7 +14,10 @@ final class BoardUITests: XCTestCase {
         launchApp()
         generateAllBoardButtons()
         resetGameButton = app.buttons["resetGameButtonIdentifier"]
+        continueAfterFailure = false
     }
+    
+    // MARK: - Game Requirements
     
     func test_viewHas9boardButtons() {
         for button in allBoardButtons {
