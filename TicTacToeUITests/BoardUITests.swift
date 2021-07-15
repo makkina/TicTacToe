@@ -40,9 +40,9 @@ final class BoardUITests: XCTestCase {
 
     /*
      Board Composition:
-        1=x   2=o   3=x
-        4=x   5=o   6=x
-        7=o   8=x   9=o
+        x o x
+        x o x
+        o x o
      */
     func test_givenGameWasDraw_resetGameButtonBecomesHittable() {
                          // x  o  x  o  x  o  x  o  x
