@@ -2,12 +2,17 @@
 
 import XCTest
 
-class BoardUITests: XCTestCase {
-
-    func test_viewHas9boardButtons() {
-        let app = XCUIApplication()
+final class BoardUITests: XCTestCase {
+    
+    private var app: XCUIApplication!
+    
+    override func setUp() {
+        super.setUp()
+        app = XCUIApplication()
         app.launch()
-        
+    }
+    
+    func test_viewHas9boardButtons() {
         for i in 1...9 {
             let button = app.buttons["boardButton \(i)"]
             XCTAssertTrue(button.waitForExistence(timeout: 1))
@@ -15,9 +20,6 @@ class BoardUITests: XCTestCase {
     }
     
     func test_givenGameWasWon_resetGameButtonBecomesHittable() {
-        let app = XCUIApplication()
-        app.launch()
-        
         for i in 1...9 {
             app.buttons["boardButton \(i)"].tap()
         }
