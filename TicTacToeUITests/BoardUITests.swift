@@ -6,12 +6,14 @@ final class BoardUITests: XCTestCase {
     
     private var app: XCUIApplication!
     private var allBoardButtons: [XCUIElement]!
+    private var resetGameButton: XCUIElement!
     
     override func setUp() {
         super.setUp()
         app = XCUIApplication()
         app.launch()
         
+        resetGameButton = app.buttons["resetGameButtonIdentifier"]
         generateAllBoardButtons()
     }
     
@@ -24,7 +26,7 @@ final class BoardUITests: XCTestCase {
     // MARK: - Game is Over
     
     /*
-     Board Composition:
+     Board Composition for Win:
         x o x
         o x o
         x - -
@@ -34,12 +36,11 @@ final class BoardUITests: XCTestCase {
             button.tap()
         }
         
-        let resetGameButton = app.buttons["resetGameButtonIdentifier"]
         XCTAssertTrue(resetGameButton.isHittable)
     }
 
     /*
-     Board Composition:
+     Board Composition for Draw:
         x o x
         x o x
         o x o
@@ -47,28 +48,21 @@ final class BoardUITests: XCTestCase {
     func test_givenGameWasDraw_resetGameButtonBecomesHittable() {
                          // x  o  x  o  x  o  x  o  x
         let drawSequence = [1, 2, 3, 5, 6, 7, 8, 9, 4]
-        
         for index in drawSequence {
             allBoardButtons[index-1].tap()
         }
         
-        let resetGameButton = app.buttons["resetGameButtonIdentifier"]
         XCTAssertTrue(resetGameButton.isHittable)
     }
     
     // MARK: - Restart Game
     
     func test_givenRestartGameButtonIsPressed_resetButtonHides() {
-        // given
-        let resetGameButton = app.buttons["resetGameButtonIdentifier"]
         for button in allBoardButtons {
             button.tap()
         }
 
-        // when
         resetGameButton.tap()
-        
-        // then
         XCTAssertFalse(resetGameButton.exists)
     }
 }
