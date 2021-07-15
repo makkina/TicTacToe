@@ -12,10 +12,7 @@ final class BoardUITests: XCTestCase {
         app = XCUIApplication()
         app.launch()
         
-        allBoardButtons = [XCUIElement]()
-        for i in 1...9 {
-            allBoardButtons.append(app.buttons["boardButton \(i)"])
-        }
+        generateAllBoardButtons()
     }
     
     func test_viewHas9boardButtons() {
@@ -31,5 +28,17 @@ final class BoardUITests: XCTestCase {
         
         let resetGameButton = app.buttons["resetGameButtonIdentifier"]
         XCTAssertTrue(resetGameButton.isHittable)
+    }
+}
+
+// MARK: - Private Helper Methods
+
+extension BoardUITests {
+    
+    private func generateAllBoardButtons() {
+        allBoardButtons = [XCUIElement]()
+        for i in 1...9 {
+            allBoardButtons.append(app.buttons["boardButton \(i)"])
+        }
     }
 }
