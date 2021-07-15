@@ -29,9 +29,6 @@ final class BoardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
-        allBoardButtons.forEach {
-            $0.accessibilityIdentifier = "boardButton \($0.tag)"
-        }
     }
     
     private func updateView() {
