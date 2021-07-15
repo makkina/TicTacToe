@@ -44,6 +44,13 @@
             BlueprintName = "TicTacToeTests"
             ReferencedContainer = "container:TicTacToe.xcodeproj">
          </BuildableReference>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "F0E64907269AB6E900C07B45"
+            BuildableName = "TicTacToeUITests.xctest"
+            BlueprintName = "TicTacToeUITests"
+            ReferencedContainer = "container:TicTacToe.xcodeproj">
+         </BuildableReference>
       </CodeCoverageTargets>
       <Testables>
          <TestableReference
@@ -57,7 +64,7 @@
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "YES">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F0E64907269AB6E900C07B45"
