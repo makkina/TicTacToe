@@ -55,6 +55,22 @@ final class BoardUITests: XCTestCase {
         let resetGameButton = app.buttons["resetGameButtonIdentifier"]
         XCTAssertTrue(resetGameButton.isHittable)
     }
+    
+    // MARK: - Restart Game
+    
+    func test_givenRestartGameButtonIsPressed_resetButtonHides() {
+        // given
+        let resetGameButton = app.buttons["resetGameButtonIdentifier"]
+        for button in allBoardButtons {
+            button.tap()
+        }
+
+        // when
+        resetGameButton.tap()
+        
+        // then
+        XCTAssertFalse(resetGameButton.exists)
+    }
 }
 
 // MARK: - Private Helper Methods
