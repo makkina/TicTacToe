@@ -10,11 +10,10 @@ final class BoardUITests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        app = XCUIApplication()
-        app.launch()
         
-        resetGameButton = app.buttons["resetGameButtonIdentifier"]
+        launchApp()
         generateAllBoardButtons()
+        resetGameButton = app.buttons["resetGameButtonIdentifier"]
     }
     
     func test_viewHas9boardButtons() {
@@ -70,6 +69,11 @@ final class BoardUITests: XCTestCase {
 // MARK: - Private Helper Methods
 
 extension BoardUITests {
+    
+    private func launchApp() {
+        app = XCUIApplication()
+        app.launch()
+    }
     
     private func generateAllBoardButtons() {
         allBoardButtons = [XCUIElement]()
